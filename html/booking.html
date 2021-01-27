@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빠른예매 | MOVIE ON</title>
+  </head>
+  <body>
+    <!-- contents container -->
+    <div id="container">
+      <!-- nav-fixed -->
+      <div id="nav-fixed">
+        <ul>
+          <li>박스오피스</li>
+          <li>상영예정작</li>
+          <li>즐겨찾기</li>
+        </ul>
+      </div>
+      <div id="contents">
+        <!-- contents TOP -->
+        <div class="main-booking-top">
+          <div class="main-booking-top-header">영화 이름</div>
+          <hr />
+          <!-- grid .container -->
+          <div>
+            <!-- grid .item1 -->
+            <div id="movie-img-booking">
+              <img src="" alt="movie.jpg" />
+            </div>
+            <!-- grid .item2 -->
+            <div class="main-booking-actor">
+              <div class="actorlist-container">
+                <div class="actor-img"><img src="#" alt="actors.jpg" /></div>
+                <div class="actor-desc">이름: , 역할:</div>
+              </div>
+            </div>
+            <!-- grid .item3 -->
+            <div class="main-booking-top-right">
+              <div class="calander">달력</div>
+            </div>
+            <button id="btn-booking">예매하기</button>
+            <!-- grid .item4 -->
+            <div class="main-booking-movielist">
+              <div class="booking-movie-header">영화</div>
+              <div class="booking-movie-list">목록</div>
+              <div class="booking-movie-selected">선택목록</div>
+            </div>
+            <!-- grid .item5 -->
+            <div class="main-booking-location">
+              <div class="booking-location-header">영화</div>
+              <div class="booking-location-list">목록</div>
+              <div class="booking-location-selected">선택목록</div>
+            </div>
+          </div>
+        </div>
+        <!-- contents MD -->
+        <div id="main-booking-md"><img src="#" alt="banner.jpg" /></div>
+        <!-- contents BOT -->
+        <div id="main-booking-bot">
+          <div id="main-booking-desc">
+            <ul>
+              <li>상세정보</li>
+              <li>관람후기</li>
+              <li>평점</li>
+              <li>공연장정보</li>
+              <li>티켓수령 취소/환불</li>
+            </ul>
+          </div>
+          <div id="booking-recommendation">
+            <div class="main-booking-bot-rcmd-header">추천영화</div>
+            <ul>
+              <li>
+                <div class="rcmd-img"><img src="#" alt="rcmd.jpg" /></div>
+                <div class="rcmd-img-desc">
+                  <p>추천영화 설명 및 사진, 출연진 등</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 티켓링크 공연 구조참조 -->
+<!--  1. 반응형
+      2. 3개 박스
+      3. top: grid(상단에 responsive하나, 하단에 5개)
+      4. bot: 영화 정보, 상세정보, 배우 등 -->
