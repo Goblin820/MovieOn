@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MOVIE ON | 영화는 Movie On</title>
+    <link rel="stylesheet" href="../style/movie.css" />
   </head>
   <body>
     <header></header>
@@ -12,36 +13,353 @@
       <!-- banner -->
       <div id="banner"></div>
       <!-- nav-fixed -->
-      <div id="nav-fixed">
-        <ul>
-          <li>박스오피스</li>
-          <li>상영예정작</li>
-          <li>즐겨찾기</li>
-        </ul>
-      </div>
-      <div id="bgimg-top"></div>
+      <ul id="nav-fixed">
+        <i></i>
+        <li>빠른예매</li>
+        <hr />
+        <i></i>
+        <li>현재개봉작</li>
+        <hr />
+        <i></i>
+        <li>즐겨찾기</li>
+      </ul>
       <div id="main">
-        <div id="main-movie-top">
-          <div class="main-movie-top-header"></div>
-          <div class="main-movie-top-desc"></div>
-          <button href="#" id="movie-top-btn">예고편 보러가기</button>
-          <button href="#" id="movie-top-btn">예매 하러가기</button>
+        <div id="main-top-wrap">
+          <img class="main-top-bgimg" src="../resource/image/bgimg-movie.jpg" />
+          <div id="main-movie-top">
+            <div class="main-movie-top-header"><p>전체영화</p></div>
+            <div class="main-movie-top-desc">
+              <p>Movie On 사이트에 오신걸 환영합니다.</p>
+            </div>
+            <div id="movie-btn-wrap">
+            <a href="#"><button class="movie-top-btn-1">박스오피스 ></button></a>
+            <a href="#"><button class="movie-top-btn-2">상영예정작 ></button></a>
+          </div>
         </div>
-        <div id="uti-movie">
-          <button id="btn-util-movie-onoff"></button>
-          <div id="util-movie-desc">개봉작만</div>
-          <div id="util-movie-result">개의 영화가 검색되었습니다.</div>
+        <div id="util-movie">
+          <button id="btn-util-movie-onoff">btn</button>
+          <span id="util-movie-desc">개봉작만</span>
+          <span id="util-movie-result">개의 영화가 검색되었습니다.</span>
         </div>
         <div id="main-movie-bottom">
           <table>
             <tr>
+              <!-- 1 -->
               <td>
-                <div id="movie-img">
-                  <img src="" alt="movie.jpg" />
-                  <div class="movie-img-title"></div>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
                 </div>
-                <div class="movie-img-hover">
-                  <div class="movie-img-hover-contents">영화 내용</div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
+                </div>
+                <div class="movie-img-btn">
+                  <button href="#" class="btn-movie-img-hover-likes">
+                    5.9k
+                  </button>
+                  <button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                    <div class="movie-img-title"></div>
+                  </div>
+                  <div class="movie-img-hover">
+                    <div class="movie-img-hover-contents">영화 내용</div>
+                  </div>
                 </div>
                 <div class="movie-img-btn">
                   <button href="#" class="btn-movie-img-hover-likes">
