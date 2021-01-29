@@ -1,5 +1,103 @@
 /* COMMON */
-
-/* 메인 컨텐츠 */
-.section {
+a {
+  font-weight: 400;
+  color: gray;
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+/* 메인 컨텐츠 */
+#section {
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.contents {
+  position: relative;
+  width: 100%;
+}
+.contents > h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+/* 컨텐츠 메뉴 버튼(멤버십, VIP LOUNGE) */
+.contents-btn {
+  margin-top: 50px;
+}
+.contents-btn-menu {
+  display: flex;
+  justify-content: space-around;
+}
+.contents-btn-menu a {
+  font-size: 18px;
+}
+.contents-btn-menu span {
+  position: relative;
+  display: inline-block;
+}
+.contents-btn-menu span::after {
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  content: '';
+  background: black;
+  transition: all 0.3s ease;
+}
+.contents-btn-menu a:hover span::after {
+  left: 0;
+  width: 100%;
+}
+
+#membership-link {
+  color: black;
+}
+#membership-link > span::after {
+  left: 0;
+  width: 100%;
+}
+#vip-link {
+  transition: color 0.5s;
+}
+#vip-link:hover {
+  color: black;
+}
+
+/* 컨텐츠 멤버십 헤드라인 */
+.contents-headline {
+  margin: 50px auto;
+  width: 90%;
+  height: 150px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 30px;
+}
+.contents-headline > ul {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 40px;
+}
+.contents-headline > ul > li {
+  display: block;
+}
+#headline-text-0 {
+  background: linear-gradient(to right, #cf4194, #fdff79);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: 600;
+}
+#headline-text-1 {
+  font-size: 16px;
+  color: rgb(228, 228, 228);
+}
+
+/* 컨텐츠 멤버십 혜택 */
