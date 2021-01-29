@@ -1,0 +1,72 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #main-top-wrap {
+    position: relative;
+    height: 40vh;
+    width: 120.1vh;
+    /* width: 100%; */
+  }
+  #main-top-wrap img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  #main-movie-top {
+    position: absolute;
+    color: #fff;
+    top: 15%;
+    left: 5%;
+    width: 330px;
+    height: 330px;
+  }
+  .main-movie-top-header {
+    font-size: 50px;
+    font-weight: bolder;
+    text-shadow: 3px 3px #000;
+    text-align: start;
+    height: 100px;
+  }
+  .main-movie-top-desc {
+    font-size: 15px;
+    text-shadow: 2px 2px #000;
+  }
+  #movie-btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .movie-top-btn-1 {
+    height: 7vh;
+    width: 25vh;
+    font-size: 15px;
+    background-color: #217c7e;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+  }
+  .movie-top-btn-1:hover {
+    background-color: #217c7e;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8) 0%,
+      #217c7e 30%
+    );
+    font-size: 1em;
+  }
+  .movie-top-btn-2 {
+    height: 7vh;
+    width: 25vh;
+    font-size: 15px;
+    background-color: #9a3334;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+  }
+  .movie-top-btn-2:hover {
+    background-color: #9a3334;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8) 0%,
+      #9a3334 30%
+    );
+    font-size: 1em;
+  }
+}
