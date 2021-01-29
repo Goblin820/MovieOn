@@ -4,19 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MOVIE ON | 영화는 Movie On</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2d323a629b.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/movie/banner.css">
     <link rel="stylesheet" href="../style/movie/common.css"/>
     <link rel="stylesheet" href="../style/movie/main.css">
+    <link rel="stylesheet" href="../style/movie/util.css">
     <link rel="stylesheet" href="../style/movie/nav-fixed.css">
     <link rel="stylesheet" href="../style/movie/footer.css">
     <link href = "../style/movie/movie-mobile0.css" media = "screen and (max-width:320px)" rel = "stylesheet" />
     <link href = "../style/movie/movie-mobile1.css" media = "screen and (min-width:320px) and (max-width:513px)" rel = "stylesheet" />
     <link href = "../style/movie/movie-mobile2.css" media = "screen and (min-width:513px) and (max-width:768px)" rel = "stylesheet" />
     <link href = "../style/movie/movie-mobile3.css" media = "screen and (min-width:768px) and (max-width:1024px)" rel = "stylesheet" />
-    
+    <script src="../script/jquery-3.5.1.min.js"></script>
   </head>
   <body>
     <header></header>
@@ -53,8 +52,9 @@
         </div>
         <div id="main-movie-bottom">
           <div id="util-movie">
-            <span>클릭>></span>
-            <i id="btn-util-movie-onoff" class="fas fa-adjust"></i>
+            <div class='toggleBG'>
+              <button class='toggleFG'></button>
+            </div>
             <span id="util-movie-desc">개봉작만</span>
             <span id="util-movie-result">xx 개의 영화가 검색되었습니다.</span>
           </div>
@@ -65,10 +65,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -87,11 +90,14 @@
               <td>
                 <div class="img-box">
                   <div class="movie-img">
-                    <img src="../resource/image/movie/소울.gif" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -111,10 +117,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -134,10 +143,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -159,10 +171,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -182,10 +197,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -205,10 +223,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -228,10 +249,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -253,10 +277,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -276,10 +303,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -299,10 +329,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -322,10 +355,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -347,10 +383,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -370,10 +409,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -393,10 +435,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -416,10 +461,13 @@
                 <div class="img-box">
                   <div class="movie-img">
                     <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
-                    <div class="movie-img-title"></div>
                   </div>
-                  <a href="#" div class="movie-img-hover">
-                    <p>영화 내용</p></a>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
                 </div>
                 <div class="movie-title">
                   <h3>12 극장판 귀멸의 </h3>
@@ -439,30 +487,31 @@
         </div>
       </div>
     </div>
+    <script src="../script/movie/movie.js"></script>
   </body>
-      <!-- footer -->
-      <footer>
-        <ul>
-          <li>후원사 1</li>
-          <li>후원사 2</li>
-          <li>후원사 3</li>
-        </ul>
-        <ul>
-          <li>회사소개</li>
-          <li>이용약관</li>
-          <li>개인정보처리방침</li>
-        </ul>
-        <div class="footer-logo"><img src="" /></div>
-        <div class="footer-desc">
-          <p>어쩌구 주소</p>
-          <p>저쩌구 만든이, 정보</p>
-          <p>이러쿵 copyright</p>
-        </div>
-        <button id="search-theater">
-          <span><i></i></span>
-          <span><p>극장찾기</p></span>
-        </button>
-      </footer>
+  <!-- footer -->
+  <footer id="footer">
+    <ul>
+      <li>후원사 1</li>
+      <li>후원사 2</li>
+      <li>후원사 3</li>
+    </ul>
+    <ul>
+      <li>회사소개</li>
+      <li>이용약관</li>
+      <li>개인정보처리방침</li>
+    </ul>
+    <div class="footer-logo"><img src="" /></div>
+    <div class="footer-desc">
+      <p>어쩌구 주소</p>
+      <p>저쩌구 만든이, 정보</p>
+      <p>이러쿵 copyright</p>
+    </div>
+    <button id="search-theater">
+      <span><i></i></span>
+      <span><p>극장찾기</p></span>
+    </button>
+  </footer>
 </html>
 <!-- 엘리온 메인 구조참조 -->
 <!--  1. 반응형
