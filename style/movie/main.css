@@ -1,6 +1,3 @@
-#main {
-  width: 80%;
-}
 #main-top-wrap {
   height: 80vh;
   width: 203.1vh;
@@ -70,21 +67,12 @@
   );
   font-size: 1em;
 }
-#util-movie {
-  position: absolute;
-  margin-top: 15px;
-  z-index: 6;
-}
-#util-movie-result {
-  padding: 5px;
-  font-weight: bold;
-}
 #main-movie-bottom {
   display: flex;
   justify-content: center;
 }
 table {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   padding: 0;
   border-spacing: 70px 80px;
 }
@@ -106,18 +94,22 @@ td {
   opacity: 1;
   transition: 0.1s ease;
   backface-visibility: hidden;
-  height: auto;
+  height: 100%;
+  width: 100%;
 }
 .movie-img img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 .movie-img-hover {
   transition: 0.2s ease;
   opacity: 0;
   position: absolute;
+  display: grid;
+  align-content: space-between;
   background-color: #000;
   color: #fff;
+  margin-bottom: 15px;
   top: 50%;
   left: 50%;
   width: 100%;
