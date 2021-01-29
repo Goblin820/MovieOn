@@ -1,19 +1,27 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span {
-  font-family: 'Sunflower' !important;
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  border: 1px solid red;
 }
+#container {
+  display: block;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#main {
+  display: inline;
+  width: 80%;
+  height: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -23,28 +31,6 @@ ul {
 ul a {
   text-decoration: none;
   color: #000;
-}
-#nav-fixed {
-  position: fixed;
-  display: inline;
-  padding: 0;
-  top: 40%;
-  right: 0;
-  width: 150px;
-  height: auto;
-  background-color: #2f343a;
-  border: none;
-  z-index: 5;
-}
-li {
-  padding: 10px;
-  color: #fff;
-}
-li:hover {
-  background-color: #717d8c;
-}
-hr {
-  width: 100%;
 }
 button {
   border: none;
