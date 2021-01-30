@@ -6,9 +6,10 @@ body {
   font-family: 'Noto Sans KR', 'Gill Sans', sans-serif;
 }
 header {
-  height: 115px;
+  height: 87px;
   background-image: url('../resource/image/index/bg.jpg');
-  min-width: 94em;
+  min-width: 94.5em;
+  
 }
 header > #loginBar {
   height: 25%;
@@ -39,6 +40,10 @@ header > nav {
 }
 
 /*loginbar css*/
+#loginBar {
+  background-image: url("../resource/image/index/bg.jpg");
+  min-width: 94.5em;
+}
 #loginBar li {
   display: inline-block;
   padding-left: 1em;
@@ -61,7 +66,8 @@ header > nav {
   width: 100%;
   z-index: 1;
   font-size: 0.9em;
-  margin-top: 1.61em;
+  margin-top: 1.66em;
+  border-top: #2B2D2F 1px solid;
   display: none;
 }
 
@@ -103,4 +109,21 @@ header a:visited {
 }
 header a:hover {
   text-decoration: underline;
+  
+}
+#loginBar a:link,
+#loginBar a:visited {
+  text-decoration: none;
+  color: #f4f4f4;
+}
+#loginBar a:hover {
+  text-decoration: underline;
+}
+
+
+/*sticky navbar*/
+
+header{
+  position: sticky;
+  top: 0;
 }
