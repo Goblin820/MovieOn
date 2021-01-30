@@ -4,12 +4,12 @@ body {
   margin: 0;
   white-space: nowrap;
   font-family: 'Noto Sans KR', 'Gill Sans', sans-serif;
+  color: #f4f4f4;
 }
 header {
   height: 87px;
   background-image: url('../resource/image/index/bg.jpg');
-  min-width: 94.5em;
-  
+  width: 95.8em;
 }
 header > #loginBar {
   height: 25%;
@@ -41,8 +41,8 @@ header > nav {
 
 /*loginbar css*/
 #loginBar {
-  background-image: url("../resource/image/index/bg.jpg");
-  min-width: 94.5em;
+  background-image: url('../resource/image/index/bg.jpg');
+  width: 95.8em;
 }
 #loginBar li {
   display: inline-block;
@@ -67,7 +67,7 @@ header > nav {
   z-index: 1;
   font-size: 0.9em;
   margin-top: 1.66em;
-  border-top: #2B2D2F 1px solid;
+  border-top: #2b2d2f 1px solid;
   display: none;
 }
 
@@ -109,7 +109,6 @@ header a:visited {
 }
 header a:hover {
   text-decoration: underline;
-  
 }
 #loginBar a:link,
 #loginBar a:visited {
@@ -120,10 +119,43 @@ header a:hover {
   text-decoration: underline;
 }
 
-
 /*sticky navbar*/
 
-header{
+header {
   position: sticky;
   top: 0;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/*section*/
+section {
+  width: 95.8em;
+  background-image: url('../resource/image/index/slidebg.jpg');
+}
+h3 {
+  padding-top: 6em;
+  padding-left: 37.5em;
+  padding-bottom: 2em;
+  margin: 0;
+}
+#movieImgL,
+#movieImgR {
+  display: inline-block;
+}
+#movieImgL {
+  width: 40%;
+  height: 300px;
+
+  margin-left: 1%;
+}
+section img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+#movieImgR {
+  margin-left: 15%;
+  width: 40%;
+  height: 300px;
 }
