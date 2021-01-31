@@ -1,3 +1,5 @@
+const { AOS } = require('../lib/aos/dist/aos');
+
 // AOS 라이브러리 초기화
 AOS.init({
   // Global settings:
