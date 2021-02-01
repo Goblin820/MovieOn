@@ -82,7 +82,7 @@ li {
 
 /* 컨텐츠 멤버십 헤드라인 */
 .contents-headline {
-  margin: 50px auto 80px auto;
+  margin: 50px auto 100px auto;
   width: 100%;
   min-width: 460px;
   height: 150px;
@@ -113,12 +113,10 @@ li {
 }
 
 /* 컨텐츠 멤버십 등급 기준 */
-.contents-membershipCondition {
+#contents-membershipCondition {
   width: 100%;
   height: 100%;
-}
-.membershipCondition-box {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .condition-box {
   margin-top: 80px;
@@ -180,9 +178,9 @@ li {
 
 .condition-coupon-benefits li {
   position: relative;
-  margin-left: 25px;
+  margin-left: 5px;
   /* width: 100%; */
-  list-style: disc;
+  list-style: inside;
 }
 .condition-coupon-benefits span::before {
   position: absolute;
@@ -196,9 +194,11 @@ li {
 }
 
 /* 컨텐츠 멤버십 혜택 */
-.contents-benefits {
+#contents-benefits {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 550px;
+  margin-bottom: 100px;
 }
 
 .benefits-point {
@@ -217,8 +217,8 @@ li {
   padding-left: 5%;
 }
 .benefits-point-imgBox > img {
-  width: 96px;
-  height: 96px;
+  width: 80px;
+  height: 80px;
 }
 
 .benefits-point-textBox {
@@ -237,4 +237,35 @@ li {
 #benefits-point-text {
   padding-top: 10px;
   font-size: 20px;
+}
+
+/* 포인트 적립, 포인트 사용, 유효기간 및 소멸, 
+생일 축하 쿠폰, 멤버십 카드   */
+.contents-membership-textSet {
+  position: relative;
+  margin-bottom: 50px;
+}
+.contents-membership-textSet li {
+  margin-left: 60px;
+  list-style: inside;
+  line-height: 35px;
+  font-size: 20px;
+  font-weight: 300;
+  text-indent: -30px;
+}
+
+.contents-membership-textSet ul {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+/* 멤버십 카드 */
+#contents-membershipCard-imgBox {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+#contents-membershipCard-imgBox img {
 }
