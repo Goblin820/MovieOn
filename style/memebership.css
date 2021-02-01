@@ -29,8 +29,8 @@ li {
   width: 100%;
 }
 .contents h2 {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 34px;
+  font-weight: 500;
 }
 .contents h3 {
   font-size: 28px;
@@ -105,7 +105,7 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
 }
 #headline-text-serve {
   font-size: 18px;
@@ -129,6 +129,11 @@ li {
   margin-top: -50px;
   margin-bottom: 20px;
 }
+.condition-box-img p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
 .condition-box-img img {
   width: 96px;
   height: 96px;
@@ -138,7 +143,8 @@ li {
   background-color: white;
 }
 #condition-box-textHead {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 #condition-box-textHeadServe {
   font-size: 14px;
@@ -146,11 +152,11 @@ li {
 #condition-box-text {
   font-size: 16px;
 }
-.condition-box li {
+.condition-box > li {
   margin: 0 10px;
   width: 30%;
   min-width: 200px;
-  height: 400px;
+  height: 360px;
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 30px;
 }
@@ -158,16 +164,35 @@ li {
   display: inline-block;
   margin: 0 auto 10px auto;
   width: 90%;
+  height: 1px;
   content: '';
-  border-bottom: 1px solid black;
+  background-color: black;
+  /* border-bottom: 1px solid black; */
 }
 .condition-box-text-condition {
   margin-left: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .condition-box-text-benefits {
   margin-left: 10px;
+}
+
+.condition-coupon-benefits li {
+  position: relative;
+  margin-left: 25px;
+  /* width: 100%; */
+  list-style: disc;
+}
+.condition-coupon-benefits span::before {
+  position: absolute;
+  right: 30px;
+  content: 'X';
+}
+.condition-coupon-benefits span {
+  position: absolute;
+  top: 0;
+  right: 18px;
 }
 
 /* 컨텐츠 멤버십 혜택 */
@@ -205,7 +230,7 @@ li {
 
 #benefits-point-headText {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   color: rgb(212, 48, 163);
 }
 

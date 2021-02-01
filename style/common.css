@@ -1,12 +1,14 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 h1,
 h2,
 h3,
 a,
 p,
+li,
 span {
-  font-family: 'Noto Sans KR' 'Gill Sans', sans-serif;
+  font-family: 'Noto Sans KR', 'Gill Sans', sans-serif;
 }
 
 a {
