@@ -10,6 +10,13 @@ li {
   padding: 0;
 }
 
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
 /* 메인 컨텐츠 */
 #section {
   margin: 0px auto;
@@ -21,9 +28,12 @@ li {
   position: relative;
   width: 100%;
 }
-.contents > h2 {
+.contents h2 {
   font-size: 30px;
   font-weight: 600;
+}
+.contents h3 {
+  font-size: 28px;
 }
 /* 컨텐츠 메뉴 버튼(멤버십, VIP LOUNGE) */
 .contents-btn {
@@ -34,7 +44,7 @@ li {
   justify-content: space-around;
 }
 .contents-btn-menu a {
-  font-size: 18px;
+  font-size: 20px;
 }
 .contents-btn-menu span {
   position: relative;
@@ -72,8 +82,9 @@ li {
 
 /* 컨텐츠 멤버십 헤드라인 */
 .contents-headline {
-  margin: 50px auto;
-  width: 90%;
+  margin: 50px auto 80px auto;
+  width: 100%;
+  min-width: 460px;
   height: 150px;
   background-color: rgb(40, 40, 40);
   border-radius: 30px;
@@ -89,16 +100,74 @@ li {
 .contents-headline > ul > li {
   display: block;
 }
-#headline-text-0 {
+#headline-text-main {
   background: linear-gradient(to right, #cf4194, #fdff79);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 36px;
   font-weight: 600;
 }
-#headline-text-1 {
-  font-size: 16px;
+#headline-text-serve {
+  font-size: 18px;
   color: rgb(228, 228, 228);
+}
+
+/* 컨텐츠 멤버십 등급 기준 */
+.contents-membershipCondition {
+  width: 100%;
+  height: 100%;
+}
+.membershipCondition-box {
+  margin-bottom: 50px;
+}
+.condition-box {
+  margin-top: 80px;
+  display: flex;
+}
+.condition-box-img {
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+.condition-box-img img {
+  width: 96px;
+  height: 96px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+#condition-box-textHead {
+  font-size: 20px;
+}
+#condition-box-textHeadServe {
+  font-size: 14px;
+}
+#condition-box-text {
+  font-size: 16px;
+}
+.condition-box li {
+  margin: 0 10px;
+  width: 30%;
+  min-width: 200px;
+  height: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  border-radius: 30px;
+}
+#bottom-line {
+  display: inline-block;
+  margin: 0 auto 10px auto;
+  width: 90%;
+  content: '';
+  border-bottom: 1px solid black;
+}
+.condition-box-text-condition {
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.condition-box-text-benefits {
+  margin-left: 10px;
 }
 
 /* 컨텐츠 멤버십 혜택 */
@@ -106,28 +175,41 @@ li {
   width: 100%;
   height: 100%;
 }
+
 .benefits-point {
-  display: inline-block;
-  float: left;
-  width: 300px;
-  height: 150px;
-  border: 1px solid black;
-}
-.aos-item {
-  display: inline-block;
-  float: left;
-  width: 33.3333%;
-  height: 300px;
-  padding: 20px;
+  display: table;
+  margin-bottom: 50px;
+  width: 45%;
+  min-width: 300px;
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  border-radius: 30px;
 }
 
-.aos-item__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  float: left;
-  background: #1da4e2;
-  line-height: 260px;
-  text-align: center;
-  color: #fff;
+.benefits-point-imgBox {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 5%;
+}
+.benefits-point-imgBox > img {
+  width: 96px;
+  height: 96px;
+}
+
+.benefits-point-textBox {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 12%;
+  padding-right: 5%;
+}
+
+#benefits-point-headText {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(212, 48, 163);
+}
+
+#benefits-point-text {
+  padding-top: 10px;
+  font-size: 20px;
 }
