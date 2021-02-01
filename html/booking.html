@@ -4,73 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>빠른예매 | MOVIE ON</title>
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/booking/booking.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <!-- contents container -->
-    <div id="container">
-      <div id="contents">
-        <!-- contents TOP -->
-        <div id="main-booking-top">
-          <div id="main-booking-top-header">빠른예매</div>
-          <!-- grid .container -->
-          <div>
-            <!-- grid .item1 -->
-            <div id="movie-img-booking">
-              <img src="" alt="movie.jpg" />
-            </div>
-            <!-- grid .item2 -->
-            <div class="main-booking-actor">
-              <div class="actorlist-container">
-                <div class="actor-img"><img src="#" alt="actors.jpg" /></div>
-                <div class="actor-desc">이름: , 역할:</div>
-              </div>
-            </div>
-            <!-- grid .item3 -->
-            <div class="main-booking-top-right">
-              <div class="calander">달력</div>
-            </div>
-            <button id="btn-booking">예매하기</button>
-            <!-- grid .item4 -->
-            <div class="main-booking-movielist">
-              <div class="booking-movie-header">영화</div>
-              <div class="booking-movie-list">목록</div>
-              <div class="booking-movie-selected">선택목록</div>
-            </div>
-            <!-- grid .item5 -->
-            <div class="main-booking-location">
-              <div class="booking-location-header">영화</div>
-              <div class="booking-location-list">목록</div>
-              <div class="booking-location-selected">선택목록</div>
-            </div>
-          </div>
+    <section id="section">
+      <!-- contents TOP -->
+      <div id="main-booking-top">
+        <h2>빠른예매</h2>
+        <div class="movie-booking-calendar">
+          <ul>
+            <span id="btn-prev"><i class="fas fa-chevron-left"></i></span>
+            <span id="calendar-date-today">1*오늘</span>
+            <span>2*내일</span>
+            <span>3*</span>
+            <span>4*</span>
+            <span>5*</span>
+            <span>6*</span>
+            <span>7*</span>
+            <span>8*</span>
+            <span>9*</span>
+            <span id="btn-next"><i class="fas fa-chevron-right"></i></span>
+          </ul>
         </div>
-        <!-- contents MD -->
-        <div id="main-booking-md"><img src="#" alt="banner.jpg" /></div>
-        <!-- contents BOT -->
-        <div id="main-booking-bot">
-          <div id="main-booking-desc">
-            <ul>
-              <li>상세정보</li>
-              <li>관람후기</li>
-              <li>평점</li>
-              <li>공연장정보</li>
-              <li>티켓수령 취소/환불</li>
+        <div class="btn-calendar">
+          <a href="#"><i class="fas fa-calendar-alt"></i></a>
+        </div>
+        <div class="booking-grid-container">
+          <!-- grid .item1 -->
+          <div class="main-booking-movie">
+            <h4>영화</h4>
+            <ul id="movie-list">
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
+              <li>극장판 귀멸의 칼날:무한열차편</li>
+              <li>소울</li>
             </ul>
           </div>
-          <div id="booking-recommendation">
-            <div class="main-booking-bot-rcmd-header">추천영화</div>
-            <ul>
+          <!-- grid .item2 -->
+          <div class="main-booking-theater">
+            <h4>극장</h4>
+            <div class="theater-list-container">
+              <ul class="theater-list-big">
+                <li>서울(8)</li>
+                <li>경기(13)</li>
+              </ul>
+              <ul class="theater-list-small">
+                <li>강남</li>
+                <li>강남대로(씨티)</li>
+                <li>군자</li>
+                <li>동대문</li>
+                <li>마곡</li>
+                <li>목동</li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <!-- grid .item3 -->
+          <div class="main-booking-time">
+            <h4>시간</h4>
+            <div class="nav-hour">
+              <ul>
+                <span id="btn-prev"><i class="fas fa-chevron-left"></i></span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+                <span>19</span>
+                <span id="btn-next"><i class="fas fa-chevron-right"></i></span>
+              </ul>
+            </div>
+            <ul id="time-list">
               <li>
-                <div class="rcmd-img"><img src="#" alt="rcmd.jpg" /></div>
-                <div class="rcmd-img-desc">
-                  <p>추천영화 설명 및 사진, 출연진 등</p>
-                </div>
+                <div class="time-duration">17:30~19:35</div>
+                <div class="time-title">세 자매 l 2D</div>
+                <div class="time-info">동대문 8관 82/152</div>
+              </li>
+              <li>
+                <div class="time-duration">17:30~19:35</div>
+                <div class="time-title">세 자매 l 2D</div>
+                <div class="time-info">동대문 8관 82/152</div>
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
+      <!-- contents banner -->
+      <div id="main-booking-bot"><a href="#"><img src="../resource/image/booking/banner.jpg" alt="banner.jpg" /></a></div>
+      <!-- contents popup -->
+      <div id="main-booking-popup">
+        <div id="main-booking-desc">
+          <ul id="ratings">
+            <li>상세정보</li>
+            <li>관람후기</li>
+            <li>평점</li>
+            <li>공연장정보</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </body>
   <!-- footer -->
   <footer>
