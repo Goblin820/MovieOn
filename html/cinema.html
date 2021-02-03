@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px auto;
+        width: 100%;
+        max-width: 1100px;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      /* highlight colors */
+      ::-moz-selection {
+        background-color: #333;
+        color: white;
+      }
+
+      ::selection {
+        background-color: #333;
+        color: white;
+      }
+
+      /* tabs */
+      .tabs {
+        border-right: 1px solid #ccc;
+      }
+      .tabs:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      .tabs input[type='radio'] {
+        display: none;
+      }
+      .tabs label {
+        display: block;
+        float: left;
+        width: 12.5%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid #ccc;
+        border-right: none;
+        background-color: #f7f7f7;
+        text-align: center;
+        font-weight: 700;
+        color: coral;
+        cursor: pointer;
+        font-size: 17px;
+        -webkit-transition: background-color 150ms ease-in-out;
+        transition: background-color 150ms ease-in-out;
+      }
+      .tabs label:hover {
+        background-color: white;
+      }
+      .tabs [id^='tab']:checked + label {
+        border-bottom-color: white;
+        background: white;
+        color: #333;
+      }
+
+      .tab-content {
+        display: none;
+        float: left;
+        width: 100%;
+        padding: 1em;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        background-color: white;
+      }
+
+      #tab1:checked ~ #tab-content1,
+      #tab2:checked ~ #tab-content2,
+      #tab3:checked ~ #tab-content3,
+      #tab4:checked ~ #tab-content4,
+      #tab5:checked ~ #tab-content5,
+      #tab6:checked ~ #tab-content6,
+      #tab7:checked ~ #tab-content7,
+      #tab8:checked ~ #tab-content8 {
+        display: block;
+      }
+
+      .other-content {
+        color: white;
+      }
+
+      /*---------------------------------------------------------*/
+      .tab-content > ul {
+        display: inline-block;
+        vertical-align: top;
+        list-style: none;
+        padding: 0;
+        border-right: grey 1px solid;
+        padding-right: 70px;
+        padding-left: 40px;
+      }
+      .tab-content li{
+          padding-top: 10px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      nonce="9b6ccbda7cc24095b619c3cee33"
+      src="//local.adguard.org?ts=1612318197977&type=content-script&dmn=www.blueb.co.kr&app=chrome.exe&css=1&js=1&gcss=1&rel=1&rji=1&sbe=0"
+    ></script>
+    <script
+      type="text/javascript"
+      nonce="9b6ccbda7cc24095b619c3cee33"
+      src="//local.adguard.org?ts=1612318197977&name=AdGuard%20Popup%20Blocker&name=AdGuard%20Extra&type=user-script"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="tabs">
+        <input type="radio" name="tabs" id="tab1" checked />
+        <label for="tab1"> 서울 </label>
+
+        <input type="radio" name="tabs" id="tab2" />
+        <label for="tab2"> 경기 </label>
+
+        <input type="radio" name="tabs" id="tab3" />
+        <label for="tab3"> 인천 </label>
+
+        <input type="radio" name="tabs" id="tab4" />
+        <label for="tab4"> 대전/충청/세종</label>
+
+        <input type="radio" name="tabs" id="tab5" />
+        <label for="tab5">부산/대구/경상 </label>
+
+        <input type="radio" name="tabs" id="tab6" />
+        <label for="tab6"> 광주/전라</label>
+
+        <input type="radio" name="tabs" id="tab7" />
+        <label for="tab7"> 강원 </label>
+
+        <input type="radio" name="tabs" id="tab8" />
+        <label for="tab8"> 제주</label>
+
+        <div id="tab-content1" class="tab-content">
+          <ul>
+            <li><a href="#">강남</a></li>
+            <li><a href="#">동대문</a></li>
+            <li><a href="#">상암월드컵경기장</a></li>
+            <li><a href="#">신촌</a></li>
+            <li><a href="#">홍대</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">강남대로(씨티)</a></li>
+            <li><a href="#">마곡</a></li>
+            <li><a href="#">성수</a></li>
+            <li><a href="#">이수</a></li>
+            <li><a href="#">화곡</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">강동</a></li>
+            <li><a href="#">목동</a></li>
+            <li><a href="#">센트럴</a></li>
+            <li><a href="#">창동</a></li>
+            <li><a href="#">ARTNINE</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">군자</a></li>
+            <li><a href="#">상봉</a></li>
+            <li><a href="#">송파파크하비오</a></li>
+            <li><a href="#">코엑스</a></li>
+            <li><a href="#"> </a></li>
+          </ul>
+        </div>
+        <div id="tab-content2" class="tab-content">
+          <ul>
+            <li><a href="#">고양스타필드</a></li>
+            <li><a href="#">동탄</a></li>
+            <li><a href="#">부천스타필드시티</a></li>
+            <li><a href="#">시흥배곧</a></li>
+            <li><a href="#">영통</a></li>
+            <li><a href="#">일산</a></li>
+            <li><a href="#">파주운정</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">김포한강신도시</a></li>
+            <li><a href="#">미사강변</a></li>
+            <li><a href="#">분당</a></li>
+            <li><a href="#">안산중앙</a></li>
+            <li><a href="#">용인기흥</a></li>
+            <li><a href="#">일산벨라시타</a></li>
+            <li><a href="#">파주출판도시</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">남양주</a></li>
+            <li><a href="#">백석</a></li>
+            <li><a href="#">수원</a></li>
+            <li><a href="#">안성스타필드</a></li>
+            <li><a href="#">용인테크노밸리</a></li>
+            <li><a href="#">킨텍스</a></li>
+            <li><a href="#">평택</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">남양주현대아울렛 스페이스원</a></li>
+            <li><a href="#">별내</a></li>
+            <li><a href="#">수원남문</a></li>
+            <li><a href="#">양주</a></li>
+            <li><a href="#">의정부민락</a></li>
+            <li><a href="#">파주금촌</a></li>
+            <li><a href="#">하남스타필드</a></li>
+          </ul>
+        </div>
+        <div id="tab-content3" class="tab-content">
+          <ul>
+            <li><a href="#">검단</a></li>
+            <li><a href="#">청라지젤</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">송도</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">영종</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">인천논현</a></li>
+          </ul>
+        </div>
+        <div id="tab-content4" class="tab-content">
+          <ul>
+            <li><a href="#">공주</a></li>
+            <li><a href="#">대전중앙로</a></li>
+            <li><a href="#">세종청사</a></li>
+            <li><a href="#">천안</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">논산</a></li>
+            <li><a href="#">대전현대아울렛</a></li>
+            <li><a href="#">오창</a></li>
+            <li><a href="#">청주사창</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">대전</a></li>
+            <li><a href="#">세종(조치원)</a></li>
+            <li><a href="#">제천</a></li>
+            <li><a href="#">충주</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">대전유성</a></li>
+            <li><a href="#">세종나성</a></li>
+            <li><a href="#">진천</a></li>
+            <li><a href="#">홍성내포</a></li>
+          </ul>
+        </div>
+        <div id="tab-content5" class="tab-content">
+          <ul>
+            <li><a href="#">경북도청</a></li>
+            <li><a href="#">남포항</a></li>
+            <li><a href="#">덕천</a></li>
+            <li><a href="#">부산대</a></li>
+            <li><a href="#">양산라피에스타</a></li>
+            <li><a href="#">창원내서</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">경산하양</a></li>
+            <li><a href="#">대구(칠성로)</a></li>
+            <li><a href="#">마산</a></li>
+            <li><a href="#">북대구(칠곡)</a></li>
+            <li><a href="#">울산</a></li>
+            <li><a href="#">해운대(장산)</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">구미강동</a></li>
+            <li><a href="#">대구신세계(동대구)</a></li>
+            <li><a href="#">문경</a></li>
+            <li><a href="#">삼천포</a></li>
+            <li><a href="#">정관</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">김천</a></li>
+            <li><a href="#">대구이시아</a></li>
+            <li><a href="#">부산극장</a></li>
+            <li><a href="#">양산</a></li>
+            <li><a href="#">창원</a></li>
+          </ul>
+        </div>
+        <div id="tab-content6" class="tab-content">
+          <ul>
+            <li><a href="#">광주상무</a></li>
+            <li><a href="#">순천</a></li>
+            <li><a href="#">첨단</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">광주하남</a></li>
+            <li><a href="#">여수웅천</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">목포하당(포르모)</a></li>
+            <li><a href="#">전대(광주)</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">송천</a></li>
+            <li><a href="#">전주혁신</a></li>
+          </ul>
+        </div>
+        <div id="tab-content7" class="tab-content">
+          <ul>
+            <li><a href="#">남춘천</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">속초</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">원주</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">원주센트럴</a></li>
+          </ul>
+        </div>
+        <div id="tab-content8" class="tab-content">
+          <ul>
+            <li><a href="#">제주</a></li>
+          </ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
