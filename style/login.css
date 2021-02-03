@@ -1,0 +1,80 @@
+#login-overlay-bg {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 990;
+}
+#login-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+#login-section {
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+  max-width: 350px;
+  height: 260px;
+  background-color: white;
+  border-radius: 20px 20px 8px 8px;
+}
+#login-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #272727;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#login-title > label {
+  margin-left: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+#login-content {
+  width: 85%;
+  margin: 20px auto;
+}
+#login-content input {
+  margin: 5px 0;
+  padding: 0;
+  width: 100%;
+  height: 35px;
+  border: 1px solid #dfdfdf;
+}
+#login-content button {
+  margin: 5px 0;
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: #dfdfdf;
+  font-size: 15px;
+}
+.login-ready__on button {
+  color: white;
+  background-color: #272727;
+}
+#login-signUp {
+  float: right;
+  color: #272727;
+  font-weight: 300;
+}
