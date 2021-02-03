@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVIE ON | 영화는 Movie On</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2d323a629b.js"></script>
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/movieTemp.css">
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <!-- contents container -->
+    <div id="container">
+      <!-- banner -->
+      <div id="banner" class="overlay">
+        <div class="popup">
+          <video src="../resource/video/"></video>
+          <a href="#" class="close">&times;</a>
+        </div>
+      </div>
+      <!-- nav-fixed -->
+      <ul id="nav-fixed">
+        <a href="#">
+        <li><i class="fas fa-arrow-alt-circle-right"></i> 빠른예매</li></a>
+        <a href="#">
+        <li><i class="fas fa-arrow-alt-circle-right"></i> 현재개봉작</li></a>
+        <a href="#">
+        <li><i class="fas fa-arrow-alt-circle-right"></i> 즐겨찾기</li></a>
+      </ul>
+      <div id="main">
+        <div id="main-top-wrap">
+          <img class="main-top-bgimg" src="../resource/image/bgimg-movie.jpg" />
+          <div id="main-movie-top">
+            <div class="main-movie-top-header"><p>전체영화</p></div>
+            <!-- <div class="main-movie-top-desc">
+              <p>Movie On 사이트에 오신걸 환영합니다.</p>
+            </div> -->
+            <div id="movie-btn-wrap">
+            <a href="#"><button class="movie-top-btn-1">박스오피스 ></button></a>
+            <a href="#"><button class="movie-top-btn-2">상영예정작 ></button></a>
+          </div>
+        </div>
+        <div id="main-movie-bottom">
+          <div id="util-movie">
+            <div class='toggleBG'>
+              <button class='toggleFG'></button>
+            </div>
+            <span id="util-movie-desc">개봉작만</span>
+            <span id="util-movie-result">xx 개의 영화가 검색되었습니다.</span>
+          </div>
+          <table>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 1 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+              <!-- 4 -->
+              <td>
+                <div class="img-box">
+                  <div class="movie-img">
+                    <img src="../resource/image/movie/귀멸의 칼날_0.jpg" alt="movie.jpg" />
+                  </div>
+                  <a href="#">
+                  <div class="movie-img-hover">
+                    <div class="movie-img-content"><p>영화 내용</p></div>
+                    <div class="movie-img-title"><p>영화 이름</p></div>
+                  </div>
+                </a>
+                </div>
+                <div class="movie-title">
+                  <h3>12 극장판 귀멸의 </h3>
+                  <p>예매율: ㅣ 개봉일: </p>
+                </div>
+                <div class="movie-img-btn">
+                  <a href="#"><button href="#" class="btn-movie-img-hover-likes">
+                    <i id="heart" class="fas fa-heart"></i> 5.9k
+                  </button></a>
+                  <a href="#"><button href="#" class="btn-movie-img-hover-booking">
+                    예매
+                  </button></a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="../script/movie.js"></script>
+  </body>
+  <!-- footer -->
+  <footer id="footer">
+    <ul>
+      <li>후원사 1</li>
+      <li>후원사 2</li>
+      <li>후원사 3</li>
+    </ul>
+    <ul>
+      <li>회사소개</li>
+      <li>이용약관</li>
+      <li>개인정보처리방침</li>
+    </ul>
+    <div class="footer-logo"><img src="" /></div>
+    <div class="footer-desc">
+      <p>어쩌구 주소</p>
+      <p>저쩌구 만든이, 정보</p>
+      <p>이러쿵 copyright</p>
+    </div>
+    <button id="search-theater">
+      <span><i></i></span>
+      <span><p>극장찾기</p></span>
+    </button>
+  </footer>
+</html>
+<!-- 엘리온 메인 구조참조 -->
+<!--  1. 반응형
+      2. 테이블
+      3. 홈피 시작 시 배너
+      4. bgimg 고정, bg버튼&컨텐츠 위로 올라옴(애니매이션) -->
