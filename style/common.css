@@ -1,6 +1,14 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
+.colors {
+  /*글자 포인트1 글자 오버시, 또는 구분지을 때 사용하는 색상*/
+  color: #d09f67;
+  /*글자 포인트2 위와 대조된 글자 강조시*/
+  color: #cf4194;
+  color: black;
+}
+
 h1,
 h2,
 h3,
@@ -19,4 +27,31 @@ a {
 ul,
 li {
   list-style: none;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/* SECTION */
+#section {
+  margin: 50px auto 0 auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.contents {
+  position: relative;
+  width: 100%;
+}
+.contents h2 {
+  font-size: 34px;
+  font-weight: 600;
+}
+.contents h3 {
+  font-size: 26px;
+  font-weight: 400;
 }

@@ -10,31 +10,6 @@ li {
   padding: 0;
 }
 
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-
-/* 메인 컨텐츠 */
-#section {
-  margin: 0px auto;
-  width: 100%;
-  max-width: 1100px;
-}
-
-.contents {
-  position: relative;
-  width: 100%;
-}
-.contents h2 {
-  font-size: 34px;
-  font-weight: 500;
-}
-.contents h3 {
-  font-size: 28px;
-}
 /* 컨텐츠 메뉴 버튼(멤버십, VIP LOUNGE) */
 .contents-btn {
   margin-top: 50px;
@@ -129,12 +104,13 @@ li {
 }
 .condition-box-img p {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+  color: #cf4194;
 }
 .condition-box-img img {
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
@@ -145,18 +121,19 @@ li {
   font-weight: 500;
 }
 #condition-box-textHeadServe {
-  font-size: 14px;
+  font-size: 13px;
 }
 #condition-box-text {
-  font-size: 16px;
+  font-size: 15px;
 }
 .condition-box > li {
   margin: 0 10px;
   width: 30%;
   min-width: 200px;
-  height: 360px;
+  height: 310px;
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 30px;
+  font-size: 14px;
 }
 #bottom-line {
   display: inline-block;
@@ -178,9 +155,9 @@ li {
 
 .condition-coupon-benefits li {
   position: relative;
+  list-style: inside;
   margin-left: 5px;
   /* width: 100%; */
-  list-style: inside;
 }
 .condition-coupon-benefits span::before {
   position: absolute;
@@ -197,16 +174,16 @@ li {
 #contents-benefits {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 500px;
   margin-bottom: 100px;
 }
 
 .benefits-point {
   display: table;
-  margin-bottom: 50px;
-  width: 45%;
-  min-width: 300px;
-  height: 200px;
+  margin: 30px;
+  width: 40%;
+  min-width: 250px;
+  height: 180px;
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 30px;
 }
@@ -214,11 +191,11 @@ li {
 .benefits-point-imgBox {
   display: table-cell;
   vertical-align: middle;
-  padding-left: 5%;
+  padding-left: 6%;
 }
 .benefits-point-imgBox > img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .benefits-point-textBox {
@@ -229,14 +206,14 @@ li {
 }
 
 #benefits-point-headText {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  color: rgb(212, 48, 163);
+  color: #d09f67;
 }
 
 #benefits-point-text {
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 /* 포인트 적립, 포인트 사용, 유효기간 및 소멸, 
@@ -244,21 +221,25 @@ li {
 .contents-membership-textSet {
   position: relative;
   margin-bottom: 50px;
+  color: #d09f67;
+}
+.contents-membership-textSet h3 {
+  font-size: 20px;
+}
+.contents-membership-textSet ul {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+  color: black;
 }
 .contents-membership-textSet li {
   margin-left: 60px;
   list-style: inside;
   line-height: 35px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300;
   text-indent: -30px;
-}
-
-.contents-membership-textSet ul {
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 40px;
-  margin-bottom: 20px;
 }
 
 /* 멤버십 카드 */
