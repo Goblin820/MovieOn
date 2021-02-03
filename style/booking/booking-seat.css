@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p, label, span{
 #section{
     height: 100%;
     width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     /* background-color: #B67721; */
 }
