@@ -66,6 +66,7 @@ function checkScroll() {
   }
 }
 
+
 window.addEventListener('scroll', checkScroll, false);
 
 window.addEventListener('load', checkScroll, false);

@@ -225,8 +225,7 @@ img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-#rolling {
-}
+
 #part1 {
   padding-top: 5%;
 }
@@ -247,6 +246,13 @@ img {
 }
 .innerDiv {
   padding-top: 25px;
+}
+#rolling a:hover {
+  text-decoration: underline;
+}
+
+.boxOfficeList {
+  padding-left: 2.41% !important;
 }
 #boxOffice li {
   display: inline-block;
