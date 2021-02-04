@@ -43,6 +43,19 @@ function InitDatePicker() {
   });
 }
 
+const signupInputcontentSelector = $('.signup-input-content');
+const signupLabelSelctorName = '.signup-label';
+const signupLabelSelctor = $(signupLabelSelctorName);
+
+// 인풋 포커스에 따라 라벨 색상을 변경시켜준다
+function FocusInput() {
+  signupInputcontentSelector.children('input').focus(function () {
+    signupLabelSelctor.css('color', 'gray');
+    $(this).siblings(signupLabelSelctorName).css('color', '#d09f67');
+  });
+}
+
 (function () {
   InitDatePicker();
+  FocusInput();
 })();

@@ -5,8 +5,11 @@ li {
 }
 
 #signup-container {
-  width: 500px;
-  height: 800px;
+  margin: 100px auto;
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  height: 650px;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.158);
   border-radius: 6px;
 }
@@ -23,21 +26,58 @@ li {
 }
 
 #signup-content {
+  position: relative;
   margin: 30px;
+  height: calc(650px - 90px);
   color: gray;
 }
-#signup-input-list input {
-  padding: 0;
+.signup-input-content > input {
+  padding: 0 10px;
   margin-bottom: 10px;
-  width: 100%;
-  height: 25px;
+  width: calc(100% - 20px);
+  height: 30px;
   border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+}
+.signup-input-content {
+  color: re;
+}
+.signup-input-content > input:hover {
+  outline: 2px solid rgb(200, 200, 200);
+  outline-offset: -2px;
+}
+.signup-input-content > input:focus {
+  outline: 2px solid #d09f67;
+  outline-offset: -2px;
 }
 
+.signup-input-content #signup-datePicker {
+  width: 80px;
+}
+
+.signup-label-star {
+  color: red;
+}
+
+/*  하단 버튼  */
+#signup-bottoms {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+}
+#signup-bottoms span {
+  position: absolute;
+  top: -20px;
+  font-size: 0;
+  width: 100%;
+  height: 1px;
+  content: '';
+  border-bottom: 1px solid gray;
+}
 #signup-btn {
-  width: 100px;
+  /* margin-top: 30px; */
+  width: 105px;
   height: 35px;
-  margin-top: 20px;
   background-color: #272727;
   border: none;
   border-radius: 10px;
