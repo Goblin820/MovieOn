@@ -6,7 +6,8 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-  background-image: url('../resource/image/booking/bgimg.jpg');
+  /* background-image: url('../resource/image/booking/bgimg.jpg'); */
+  background-color: #272727;
 }
 h1,
 h2,
@@ -17,7 +18,7 @@ h6,
 p,
 label,
 span {
-  color: #fff;
+  color: #d09f67;
 }
 #section {
   height: 100%;
