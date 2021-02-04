@@ -50,11 +50,10 @@ button {
   vertical-align: middle;
 }
 #main-movie-top {
-  position: absolute;
+  position: relative;
   color: #fff;
-  top: 10%;
-  left: 10%;
-  width: 40%;
+  top: 20%;
+  left: 5%;
   padding-bottom: 30%;
 }
 .main-movie-top-header {
