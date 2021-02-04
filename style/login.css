@@ -1,3 +1,8 @@
+.no-scroll {
+  overflow: hidden;
+  margin-right: 24.5px !important;
+}
+
 #login-overlay-bg {
   position: fixed;
   overflow-y: scroll;
@@ -20,9 +25,6 @@
   width: 100%;
   height: 100%;
   z-index: 999;
-}
-.no-scroll {
-  overflow: hidden;
 }
 
 #login-section {
@@ -48,7 +50,26 @@
   font-size: 14px;
   color: white;
 }
-
+#login-title > button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+}
+#login-close-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 15px;
+  content: '';
+  font-size: 0;
+  background: url(../resource/image/icon/btn-close-header-notice.png) no-repeat
+    0 top;
+}
+#login-title > button:hover #login-close-btn {
+  background-position-y: -15px;
+}
 #login-content {
   width: 85%;
   margin: 20px auto;
@@ -73,7 +94,7 @@
   color: white;
   background-color: #272727;
 }
-#login-signUp {
+#login-signup {
   float: right;
   color: #272727;
   font-weight: 300;
