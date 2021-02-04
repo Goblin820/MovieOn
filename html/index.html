@@ -4,264 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        margin: 0px auto;
-        width: 100%;
-        max-width: 1100px;
-      }
-      /*-------------------------------------*/
-      #loginBar {
-        height: 30px;
-        border: blue 1px solid;
-        margin: 0;
-        padding-top: 2px;
-      }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//www.youtube.com/player_api"></script>
+    <script src="../script/index/youtubelist.js"></script>
+    <script src="../script/index/rollingtext.js"></script>
 
-      #loginBar li {
-        display: inline-block;
-      }
-
-      /*-------------------------------------*/
-
-      #list {
-        height: 100px;
-        border: blue 1px solid;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      #list li {
-        display: inline-block;
-        font-size: 30px;
-        padding-left: 8%;
-      }
-      /*-------------------------------------*/
-      #navList {
-        height: 130px;
-        border: blue 1px solid;
-        margin: 0;
-        display: none;
-      }
-      #navList ul {
-        display: inline-block;
-        padding-top: 7px;
-      }
-      #navList li {
-        padding-top: 15px;
-        text-align: center;
-      }
-      #a {
-        margin-left: 4.2%;
-      }
-      #b {
-        margin-left: 2.5%;
-      }
-      #c {
-        margin-left: 34%;
-      }
-      #d {
-        margin-left: 2.7%;
-      }
-      #listAndnavList:hover #navList {
-        display: block;
-      }
-      #listAndnavList {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-      }
-      /*------------------------------------- mainsection*/
-
-      #pictures {
-        z-index: 0;
-      }
-      .mySlides {
-        display: none;
-      }
-
-      img {
-        vertical-align: middle;
-      }
-
-      /* Slideshow container */
-      .slideshow-container {
-        position: relative;
-        margin: auto;
-      }
-
-      /* Next & previous buttons */
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-
-      /* Position the "next button" to the right */
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      /* On hover, add a black background color with a little bit see-through */
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      /* Caption text */
-      .text {
-        color: #f2f2f2;
-        font-size: 15px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 8px;
-        width: 100%;
-        text-align: center;
-      }
-
-      /* Number text (1/3 etc) */
-      .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-      }
-
-      /* The dots/bullets/indicators */
-      .dot {
-        cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-      }
-
-      .active,
-      .dot:hover {
-        background-color: #717171;
-      }
-
-      /* Fading animation */
-      .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
-
-      @-webkit-keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* On smaller screens, decrease text size */
-      @media only screen and (max-width: 300px) {
-        .prev,
-        .next,
-        .text {
-          font-size: 11px;
-        }
-      }
-
-      /*-------------------------------------*/
-      #boxOffice h1 {
-        text-align: center;
-        background-color: gray;
-        margin: 0;
-      }
-
-      #boxOffice li {
-        display: inline-block;
-      }
-      #boxOffice ul {
-        padding: 0;
-      }
-      #boxOfficeBu {
-        display: block;
-      }
-      .like {
-        border-radius: 8px;
-        border: none;
-        background: #00000066;
-        width: 80px;
-        font-size: 15px;
-        padding: 7px;
-      }
-      .reservation {
-        border-radius: 8px;
-        border: none;
-        width: 185px;
-        font-size: 15px;
-        padding: 7px;
-      }
-      .overlay {
-        position: relative;
-      }
-      .boxOfficeImg {
-        display: block;
-        width: 270px;
-        height: 400px;
-      }
-      .textInImg {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: 0.5s ease;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-      }
-      .overlay:hover .textInImg {
-        opacity: 1;
-      }
-      .textInImg div {
-        padding: 12%;
-      }
-
-      /*-------------------------------------*/
-      .fnb li {
-        display: inline-block;
-      }
-    </style>
+    <link rel="stylesheet" href="../style/index.css" />
   </head>
   <body>
     <ul id="loginBar">
       <li><a href="#">멤버십</a></li>
       <li><a href="#">고객센터</a></li>
-      <li><a href="#">로그인</a></li>
+      <li id="login"><a href="#">로그인</a></li>
       <li><a href="#">회원가입</a></li>
       <li><a href="#">마이페이지</a></li>
     </ul>
@@ -275,6 +29,7 @@
               src="../resource/image/index/movieOn.PNG"
               alt=""
               height="70px"
+              style="border-radius: 8px"
           /></a>
         </li>
         <li><a href="#">극장</a></li>
@@ -356,238 +111,221 @@
 
     <div id="boxOffice">
       <h1>박스오피스</h1>
+      <div id="rolling">
+        <script>
+          new pausescroller(pausecontent2, 'pscroller2', 'someclass', 2000);
+        </script>
+      </div>
       <ul>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/02/01/qDLdOQKdvIeLyniUM7DX567IaJeyJmbv_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                혈귀로 변해버린 여동생 ‘네즈코’를 인간으로 되돌릴 단서를 찾아
-                비밀조직 귀살대에 들어간 ‘탄지로.’ ‘젠이츠’, ‘이노스케’와 새로운
-                임무 수행을 위해 무한열차에 탑승 후 귀살대 최강 검사 염주
-                ‘렌고쿠’와 합류한다.
+        <div id="part1">
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/02/01/qDLdOQKdvIeLyniUM7DX567IaJeyJmbv_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  혈귀로 변해버린 여동생 ‘네즈코’를 인간으로 되돌릴 단서를 찾아
+                  비밀조직 귀살대에 들어간 ‘탄지로.’ ‘젠이츠’, ‘이노스케’와
+                  새로운 임무 수행을 위해 무한열차에 탑승 후 귀살대 최강 검사
+                  염주 ‘렌고쿠’와 합류한다.
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 5.5k</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/19/6DxwU2fVVnc4xcSvLfzlMQXPJKCovkJK.gif"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                나는 어떻게 ‘나’로 태어나게 되었을까? 지구에 오기 전 영혼들이
-                머무는 ‘태어나기 전 세상’이 있다면? 뉴욕에서 음악 선생님으로
-                일하던 ‘조’는 꿈에 그리던 최고의 밴드와 재즈 클럽에서 연주하게
-                된 그 날, 예기치 못한 사고로 영혼이 되어 ‘태어나기 전 세상’에
-                떨어진다.
+            <div id="boxOfficeBu">
+              <button class="like">♡ 5.5k</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/19/6DxwU2fVVnc4xcSvLfzlMQXPJKCovkJK.gif"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  나는 어떻게 ‘나’로 태어나게 되었을까? 지구에 오기 전 영혼들이
+                  머무는 ‘태어나기 전 세상’이 있다면? 뉴욕에서 음악 선생님으로
+                  일하던 ‘조’는 꿈에 그리던 최고의 밴드와 재즈 클럽에서 연주하게
+                  된 그 날, 예기치 못한 사고로 영혼이 되어 ‘태어나기 전 세상’에
+                  떨어진다.
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 1.2k</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/25/Omy3L8XE472rkOawlKDOLxV4uZJXQSvi_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                계기판도 GPS도 조종사도 없다! 내 안의 생존 본능을 깨워라!
-                에메랄드 빛 해안을 낀 열대섬으로 향하던 ‘사라’ 이륙 후
-                두근거림도 잠시 멀쩡했던 조종사는 심정지로 정신을 잃고 흔들리는
-                기체로 인해 고장 난 계기판과 GPS! 메이데이! 메이데이! 메이데이!
-                구조를 외치는 중에도 추락하는 비행기. 생존확률 0%? 욕 터지는
-                고공 분투가 시작된다!
+            <div id="boxOfficeBu">
+              <button class="like">♡ 1.2k</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/25/Omy3L8XE472rkOawlKDOLxV4uZJXQSvi_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  계기판도 GPS도 조종사도 없다! 내 안의 생존 본능을 깨워라!
+                  에메랄드 빛 해안을 낀 열대섬으로 향하던 ‘사라’ 이륙 후
+                  두근거림도 잠시 멀쩡했던 조종사는 심정지로 정신을 잃고
+                  흔들리는 기체로 인해 고장 난 계기판과 GPS! 메이데이! 메이데이!
+                  메이데이! 구조를 외치는 중에도 추락하는 비행기. 생존확률 0%?
+                  욕 터지는 고공 분투가 시작된다!
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 63</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/21/zV5jw7kX3j7oxLZ4XxOJkkqVXr34Su8l_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                가족들을 안전하게 보호하기 위해 범죄자인 '매트'를 치료해야만
-                하는 '리치'는 고민에 빠지고 평생 범죄자를 상대해오며 어차피
-                치료를 해도 이들이 가족을 살려 둘 리 없음을 잘 아는 전직 보안관
-                '프랭크'는 반격을 노리는데... 잔인하기만 했던 그날 밤, 과연
-                이들은 살아남을 수 있을까?
+            <div id="boxOfficeBu">
+              <button class="like">♡ 63</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/21/zV5jw7kX3j7oxLZ4XxOJkkqVXr34Su8l_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  가족들을 안전하게 보호하기 위해 범죄자인 '매트'를 치료해야만
+                  하는 '리치'는 고민에 빠지고 평생 범죄자를 상대해오며 어차피
+                  치료를 해도 이들이 가족을 살려 둘 리 없음을 잘 아는 전직
+                  보안관 '프랭크'는 반격을 노리는데... 잔인하기만 했던 그날 밤,
+                  과연 이들은 살아남을 수 있을까?
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 39</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2020/10/05/Rx4ddCC5fZg3a4AqyYTRW31owmhpMvoP_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                친애하는 길베르트 소령님, 오늘도 또 당신을 떠올리고 말았습니다.
-                무엇을 보든 무엇을 하든 당신이 떠오릅니다. 시간이 지나도 당신과
-                보냈던 기억은 선명하게 되살아납니다. 당신은 날 곁에 두었고
-                아무것도 모르는 제게 살아가는 방법을 가르쳐 주셨고 처음으로
-                사랑이라는 감정을 알려주셨습니다. 그래서 이렇게 또 편지를 쓰게
-                됩니다. -언젠가 이 편지가 당신에게 닿기를 바라며-
+            <div id="boxOfficeBu">
+              <button class="like">♡ 39</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+        </div>
+        <div id="part2">
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2020/10/05/Rx4ddCC5fZg3a4AqyYTRW31owmhpMvoP_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  친애하는 길베르트 소령님, 오늘도 또 당신을 떠올리고
+                  말았습니다. 무엇을 보든 무엇을 하든 당신이 떠오릅니다. 시간이
+                  지나도 당신과 보냈던 기억은 선명하게 되살아납니다. 당신은 날
+                  곁에 두었고 아무것도 모르는 제게 살아가는 방법을 가르쳐 주셨고
+                  처음으로 사랑이라는 감정을 알려주셨습니다. 그래서 이렇게 또
+                  편지를 쓰게 됩니다. -언젠가 이 편지가 당신에게 닿기를 바라며-
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 30</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/15/gBqxfBxyNKueocPjdjvFsqBTxsopwB7K_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                초등학생 코난이 아닌, 본래의 모습으로 교토 수학여행에 참가하게
-                된 고등학생 탐정 쿠도 신이치. 평범한 고등학생처럼 모리 란과
-                행복한 시간을 보내는 것도 잠시, 우연히 만난 배우 구라치 케이코의
-                부탁으로 의문의 암호 해독을 부탁받는다. 하지만 곧이어 그녀의
-                영화 제작 동료들을 둘러싼 연쇄 살인 사건이 일어난다. 범죄의
-                현장에는 요괴의 행적처럼 꾸며진 피 묻은 발자국과 팔손이 나뭇잎,
-                그리고 새로운 암호가 남겨져 있었는데…
+            <div id="boxOfficeBu">
+              <button class="like">♡ 30</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/15/gBqxfBxyNKueocPjdjvFsqBTxsopwB7K_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  초등학생 코난이 아닌, 본래의 모습으로 교토 수학여행에 참가하게
+                  된 고등학생 탐정 쿠도 신이치. 평범한 고등학생처럼 모리 란과
+                  행복한 시간을 보내는 것도 잠시, 우연히 만난 배우 구라치
+                  케이코의 부탁으로 의문의 암호 해독을 부탁받는다. 하지만 곧이어
+                  그녀의 영화 제작 동료들을 둘러싼 연쇄 살인 사건이 일어난다.
+                  범죄의 현장에는 요괴의 행적처럼 꾸며진 피 묻은 발자국과 팔손이
+                  나뭇잎, 그리고 새로운 암호가 남겨져 있었는데…
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 161</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/11/SNph9DsBiEFNkJFQBkwzlxcubk1RSq3o_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                멈추지 않는 인간 사냥이 시작됐다! 5년 전 눈앞에서 딸의 실종을
-                목격한 ‘레이번’ 그는 슬픔을 견디며 자연보호구역을 관리자로
-                살아간다. 어느 날 숲 속에서 한 소녀가 인간사냥을 당하는 장면을
-                목격하고, 그는 본능적으로 딸의 실종과 관련이 있음을 직감한다.
-                결국 그는 소녀를 구하기 위해 끔찍한 인간 사냥 현장으로
-                뛰어드는데…
+            <div id="boxOfficeBu">
+              <button class="like">♡ 161</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/11/SNph9DsBiEFNkJFQBkwzlxcubk1RSq3o_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  멈추지 않는 인간 사냥이 시작됐다! 5년 전 눈앞에서 딸의 실종을
+                  목격한 ‘레이번’ 그는 슬픔을 견디며 자연보호구역을 관리자로
+                  살아간다. 어느 날 숲 속에서 한 소녀가 인간사냥을 당하는 장면을
+                  목격하고, 그는 본능적으로 딸의 실종과 관련이 있음을 직감한다.
+                  결국 그는 소녀를 구하기 위해 끔찍한 인간 사냥 현장으로
+                  뛰어드는데…
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 99</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
-        <li class="boxOfficeList">
-          <div class="overlay">
-            <img
-              class="boxOfficeImg"
-              src="https://img.megabox.co.kr/SharedImg/2021/01/07/Y8GKnsftFoDRjaobxrLtkBve8iBbjaS4_420.jpg"
-              alt=""
-              width="270px"
-            />
-            <div class="textInImg">
-              <div>
-                “넌 날 기억해야만 해” 그녀의 복수엔 이유가 있다! 전쟁 중 마야와
-                여동생은 나치 친위대에게 몹쓸 짓을 당한 것. 그러던 어느 날,
-                마야는 아들과 함께 놀러 간 공원에서 특이한 휘파람 소리를 듣게
-                되고 그 휘파람 소리는 끔찍한 과거의 기억을 모조리 끄집어낸다.
-                죽을 힘을 다해 잊으려 했던 과거가 갑자기 눈 앞에 나타나자,
-                마야는 충동적으로 그를 납치해 지하실에 가두는데…
+            <div id="boxOfficeBu">
+              <button class="like">♡ 99</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+          <li class="boxOfficeList">
+            <div class="overlay">
+              <img
+                class="boxOfficeImg"
+                src="https://img.megabox.co.kr/SharedImg/2021/01/07/Y8GKnsftFoDRjaobxrLtkBve8iBbjaS4_420.jpg"
+                alt=""
+                width="270px"
+              />
+              <div class="textInImg">
+                <div>
+                  “넌 날 기억해야만 해” 그녀의 복수엔 이유가 있다! 전쟁 중
+                  마야와 여동생은 나치 친위대에게 몹쓸 짓을 당한 것. 그러던 어느
+                  날, 마야는 아들과 함께 놀러 간 공원에서 특이한 휘파람 소리를
+                  듣게 되고 그 휘파람 소리는 끔찍한 과거의 기억을 모조리
+                  끄집어낸다. 죽을 힘을 다해 잊으려 했던 과거가 갑자기 눈 앞에
+                  나타나자, 마야는 충동적으로 그를 납치해 지하실에 가두는데…
+                </div>
               </div>
             </div>
-          </div>
-          <div id="boxOfficeBu">
-            <button class="like">♡ 92</button>
-            <button class="reservation">예매</button>
-          </div>
-        </li>
+            <div id="boxOfficeBu">
+              <button class="like">♡ 92</button>
+              <a href="#"><button class="reservation">예매</button></a>
+            </div>
+          </li>
+        </div>
       </ul>
     </div>
+    <h1 style="color: white; text-align: center; margin-top: 20%">
+      LIVE CHANNAL
+    </h1>
+    <div id="player"></div>
 
     <footer id="footer">
-      <ul class="fnb">
-        <li>
-          <a href="/megaboxinfo" title="회사소개 페이지로 이동">회사소개</a>
-        </li>
-        <li>
-          <a href="/recruit" title="인재채용 페이지로 이동">인재채용</a>
-        </li>
-        <li>
-          <a href="/socialcontribution" title="사회공헌 페이지로 이동"
-            >사회공헌</a
-          >
-        </li>
-        <li>
-          <a href="/partner" title="제휴/광고/부대사업문의 페이지로 이동"
-            >제휴/광고/부대사업문의</a
-          >
-        </li>
-        <li>
-          <a href="/support/terms" title="이용약관 페이지로 이동">이용약관</a>
-        </li>
-        <li class="privacy">
-          <a href="/support/privacy" title="개인정보처리방침 페이지로 이동"
-            >개인정보처리방침</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://jebo.joonganggroup.com/main.do"
-            target="_blank"
-            title="윤리경영 페이지로 이동"
-            >윤리경영</a
-          >
-        </li>
-      </ul>
+      <img
+        src="../resource/image/index/movieOn.PNG"
+        alt=""
+        width="150px"
+        style="margin-bottom: 10%; border-radius: 8px"
+      />
 
-      <img src="../resource/image/index/movieOn.PNG" alt="" width="100px" />
-
-      <div class="footer-info">
+      <div class="footer-info" >
         <p>
           서울특별시 마포구 월드컵로 240, 지상2층(성산동, 월드컵주경기장) ARS
           1544-0070
@@ -596,55 +334,10 @@
           대표자명 김진선· 개인정보보호책임자 조상연· 사업자등록번호
           211-86-59478· 통신판매업신고번호 제 833호
         </p>
-        <p>COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved</p>
+        <p>COPYRIGHT © MovieOn, Inc. All rights reserved</p>
       </div>
-
-      <div class="footer-sns"></div>
     </footer>
 
-    <script>
-      var slideIndex = 1;
-      showSlides(0);
-      autoSlides();
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName('mySlides');
-        var dots = document.getElementsByClassName('dot');
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = 'none';
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(' active', '');
-        }
-        slides[slideIndex - 1].style.display = 'block';
-        dots[slideIndex - 1].className += ' active';
-      }
-
-      function autoSlides() {
-        var i;
-        var slides = document.getElementsByClassName('mySlides');
-        var dots = document.getElementsByClassName('dot');
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = 'none';
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(' active', '');
-        }
-        slides[slideIndex - 1].style.display = 'block';
-        dots[slideIndex - 1].className += ' active';
-        setTimeout(autoSlides, 3000); // Change image every 3 seconds
-      }
-    </script>
+    <script src="../script/index/slideshow.js"></script>
   </body>
 </html>

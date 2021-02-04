@@ -1,0 +1,11 @@
+#footer {
+    margin-top: 5%;
+    background-image: url('../resource/image/index/bg.jpg');
+    text-align: center;
+    border-radius: 8px;
+    height: 140px;
+  }
+  .footer-info {
+    display: inline-block;
+    margin-left: 5%;
+  }
