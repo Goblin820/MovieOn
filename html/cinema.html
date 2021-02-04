@@ -4,110 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      html {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0px auto;
-        width: 100%;
-        max-width: 1100px;
-      }
-
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
-
-      /* highlight colors */
-      ::-moz-selection {
-        background-color: #333;
-        color: white;
-      }
-
-      ::selection {
-        background-color: #333;
-        color: white;
-      }
-
-      /* tabs */
-      .tabs {
-        border-right: 1px solid #ccc;
-      }
-      .tabs:after {
-        content: '';
-        display: table;
-        clear: both;
-      }
-      .tabs input[type='radio'] {
-        display: none;
-      }
-      .tabs label {
-        display: block;
-        float: left;
-        width: 12.5%;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: 1px solid #ccc;
-        border-right: none;
-        background-color: #f7f7f7;
-        text-align: center;
-        font-weight: 700;
-        color: coral;
-        cursor: pointer;
-        font-size: 17px;
-        -webkit-transition: background-color 150ms ease-in-out;
-        transition: background-color 150ms ease-in-out;
-      }
-      .tabs label:hover {
-        background-color: white;
-      }
-      .tabs [id^='tab']:checked + label {
-        border-bottom-color: white;
-        background: white;
-        color: #333;
-      }
-
-      .tab-content {
-        display: none;
-        float: left;
-        width: 100%;
-        padding: 1em;
-        border-bottom: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-        background-color: white;
-      }
-
-      #tab1:checked ~ #tab-content1,
-      #tab2:checked ~ #tab-content2,
-      #tab3:checked ~ #tab-content3,
-      #tab4:checked ~ #tab-content4,
-      #tab5:checked ~ #tab-content5,
-      #tab6:checked ~ #tab-content6,
-      #tab7:checked ~ #tab-content7,
-      #tab8:checked ~ #tab-content8 {
-        display: block;
-      }
-
-      .other-content {
-        color: white;
-      }
-
-      /*---------------------------------------------------------*/
-      .tab-content > ul {
-        display: inline-block;
-        vertical-align: top;
-        list-style: none;
-        padding: 0;
-        border-right: grey 1px solid;
-        padding-right: 70px;
-        padding-left: 40px;
-      }
-      .tab-content li{
-          padding-top: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="../style/header.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/cinema.css">
     <script
       type="text/javascript"
       nonce="9b6ccbda7cc24095b619c3cee33"
@@ -120,6 +19,50 @@
     ></script>
   </head>
   <body>
+    <ul id="loginBar">
+      <li><a href="#">멤버십</a></li>
+      <li><a href="#">고객센터</a></li>
+      <li id="login"><a href="#">로그인</a></li>
+      <li><a href="#">회원가입</a></li>
+      <li><a href="#">마이페이지</a></li>
+    </ul>
+    <div id="listAndnavList">
+      <ul id="list">
+        <li style="padding-top: 8px"><a href="#">영화</a></li>
+        <li style="padding-top: 8px"><a href="#">예매</a></li>
+        <li>
+          <a href="#"
+            ><img
+              src="../resource/image/index/movieOn.PNG"
+              alt=""
+              height="70px"
+              style="border-radius: 8px"
+          /></a>
+        </li>
+        <li style="padding-top: 8px"><a href="#">극장</a></li>
+        <li style="padding-right: 8%; padding-top: 8px">
+          <a href="#">이벤트</a>
+        </li>
+      </ul>
+      <div id="navList">
+        <ul id="a">
+          <li><a href="#">상영 영화</a></li>
+          <li><a href="#">상영 예정작</a></li>
+        </ul>
+        <ul id="b">
+          <li><a href="#">빠른예매</a></li>
+          <li><a href="#">상영시간표</a></li>
+        </ul>
+        <ul id="c">
+          <li><a href="#">지역별 극장</a></li>
+          <li><a href="#">특별관</a></li>
+        </ul>
+        <ul id="d">
+          <li><a href="#">진행중 이벤트</a></li>
+          <li><a href="#">지난 이벤트</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="tabs">
         <input type="radio" name="tabs" id="tab1" checked />
@@ -330,5 +273,20 @@
         </div>
       </div>
     </div>
+    <footer id="footer">
+      <img src="../resource/image/index/movieOn.PNG" alt="" width="150px" />
+
+      <div class="footer-info">
+        <p>
+          서울특별시 마포구 월드컵로 240, 지상2층(성산동, 월드컵주경기장) ARS
+          1544-0070
+        </p>
+        <p>
+          대표자명 김진선· 개인정보보호책임자 조상연· 사업자등록번호
+          211-86-59478· 통신판매업신고번호 제 833호
+        </p>
+        <p>COPYRIGHT © MovieOn, Inc. All rights reserved</p>
+      </div>
+    </footer>
   </body>
 </html>
