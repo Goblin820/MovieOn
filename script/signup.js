@@ -1,4 +1,4 @@
-// jquery ui datepicker
+// ------------- jquery ui datepicker 설정 ------------- //
 function InitDatePicker() {
   $('#signup-datePicker').datepicker({
     showAnim: 'slideDown',
@@ -12,7 +12,7 @@ function InitDatePicker() {
       'http://jqueryui.com/resources/demos/datepicker/images/calendar.gif', //버튼 이미지 경로
     buttonImageOnly: true, //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
     buttonText: '선택', //버튼에 마우스 갖다 댔을 때 표시되는 텍스트
-    yearSuffix: '년', //달력의 년도 부분 뒤에 붙는 텍스트
+    yearSuffix: ' / ', //달력의 년도 부분 뒤에 붙는 텍스트
     yearRange: '1920:2999',
     monthNamesShort: [
       '1',
@@ -43,6 +43,7 @@ function InitDatePicker() {
   });
 }
 
+// ------------- 인풋 포커스 관련 ------------- //
 const signupInputcontentSelector = $('.signup-input-content');
 const signupLabelSelctorName = '.signup-label';
 const signupLabelSelctor = $(signupLabelSelctorName);
@@ -55,7 +56,159 @@ function FocusInput() {
   });
 }
 
-(function () {
+// ------------- 정규 표현식 --------------- //
+
+// 필요 데이터 생성자 함수화
+function SignupData() {
+  this.userData = {
+    id: '',
+    password: '',
+    passwordRe: '',
+    name: '',
+    nickname: '',
+    email: '',
+    birth: null,
+  };
+  this.$inputs = {
+    id: null,
+    password: null,
+    passwordRe: null,
+    name: null,
+    nickname: null,
+    email: null,
+    birth: null,
+  };
+  this.$warningLabels = {
+    id: null,
+    password: null,
+    passwordRe: null,
+    name: null,
+    nickname: null,
+    email: null,
+  };
+}
+// 데이터 초기화
+const signupData = new SignupData();
+signupData.$inputs.id = $('input[name=userId]');
+signupData.$inputs.password = $('input[name=userPassword]');
+signupData.$inputs.passwordRe = $('input[name=userPasswordRe]');
+signupData.$inputs.name = $('input[name=userName]');
+signupData.$inputs.nickname = $('input[name=userNickname]');
+signupData.$inputs.email = $('input[name=userEmail]');
+signupData.$inputs.birth = $('input[name=userBirth]');
+
+signupData.$warningLabels.id = $('#warning-userId');
+signupData.$warningLabels.password = $('#warning-userPassword');
+signupData.$warningLabels.passwordRe = $('#warning-userPassword-re');
+signupData.$warningLabels.name = $('#warning-userName');
+signupData.$warningLabels.nickname = $('#warning-userNickname');
+signupData.$warningLabels.email = $('#warning-userEmail');
+
+// $(function () {
+function OnSignup() {
+  $('.warning-text').empty();
+
+  // 아이디 체크
+  signupData.userData.id = signupData.$inputs.id.val();
+  let check = true;
+  if (signupData.userData.id.length == 0) {
+    signupData.$warningLabels.id.text(
+      '필수항목 (4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능)'
+    );
+    check = false;
+  } else if (!validateId(signupData.userData.id)) {
+    signupData.$warningLabels.id.text(
+      '4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능'
+    );
+    check = false;
+  }
+
+  // 비번 체크
+  signupData.userData.password = signupData.$inputs.password.val();
+  if (signupData.userData.password.length == 0) {
+    signupData.$warningLabels.password.text(
+      '필수항목 (6~20자 / 영어 및 숫자 포함)'
+    );
+    check = false;
+  } else if (!validatePassword(signupData.userData.password)) {
+    signupData.$warningLabels.password.text(
+      '6~20자의 영어 및 숫자 포함하여 입력하세요!'
+    );
+    check = false;
+  }
+
+  // 비번 재확인 체크
+  signupData.userData.passwordRe = signupData.$inputs.passwordRe.val();
+  if (signupData.userData.passwordRe.length == 0) {
+    signupData.$warningLabels.passwordRe.text(
+      '필수항목 (비밀번호와 똑같이 입력해주세요!)'
+    );
+    check = false;
+  } else if (
+    !validatePasswordConfirm(
+      signupData.userData.password,
+      signupData.userData.passwordRe
+    )
+  ) {
+    signupData.$warningLabels.passwordRe.text(
+      '비밀번호와 입력한 값이 같지 않습니다!'
+    );
+    check = false;
+  }
+
+  // 이름 체크
+  signupData.userData.name = signupData.$inputs.name.val();
+  if (signupData.userData.name == 0) {
+    signupData.$warningLabels.name.text('필수항목(2~20자의 한글만 입력 가능)');
+    check = false;
+  } else if (!validateName(signupData.userData.name)) {
+    signupData.$warningLabels.name.text('2~20자의 한글만 입력해주세요!');
+    check = false;
+  }
+
+  // 이메일 체크
+  signupData.userData.email = signupData.$inputs.email.val();
+  if (signupData.userData.email == 0) {
+    signupData.$warningLabels.email.text('이메일 형식에 맞게 입력해주세요');
+    check = false;
+  } else if (!validateEmail(signupData.userData.email)) {
+    signupData.$warningLabels.email.text('');
+    check = false;
+  }
+
+  // 데이터 전송
+  submit();
+}
+
+function validateId(id) {
+  // 4~20자 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능
+  const regExp = /^[a-z]+[a-z0-9]{3,19}/;
+  return regExp.test(id);
+}
+function validatePassword(password) {
+  // 6~20자 영어, 숫자 중 하나 이상 모두 포함
+  var regExp = /^(?=.{6,20})(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).*$/;
+  return regExp.test(password);
+}
+function validatePasswordConfirm(password, passwordRe) {
+  return password == passwordRe;
+}
+function validateName(name) {
+  // 2~20자 완성형 한글만
+  var regExp = /^[가-힣]+[가-힣]{1,19}$/;
+  return regExp.test(name);
+}
+function validateEmail(email) {
+  // 이메일 형식에 맞게
+  var regExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regExp.test(email);
+}
+
+// 서버 전송
+function submit() {}
+
+// ------------- 초기화 ------------- //
+(function Init() {
   InitDatePicker();
   FocusInput();
 })();

@@ -58,6 +58,12 @@ li {
 .signup-label-star {
   color: red;
 }
+.warning-text {
+  margin-left: 20px;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: red;
+}
 
 /*  하단 버튼  */
 #signup-bottoms {
