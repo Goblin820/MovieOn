@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
   </head>
   <body>
     <!-- contents container -->
@@ -21,21 +22,18 @@
         <div class="movie-booking-calendar">
           <ul>
             <span id="btn-prev-date"><i class="fas fa-chevron-left"></i></span>
-            <span id="calendar-date-today">1*Today</span>
-            <span>2*Tmrw</span>
-            <span>3*Mon</span>
-            <span>4*Tue</span>
-            <span>5*Wed</span>
-            <span>6*Thu</span>
-            <span>7*Fri</span>
-            <span>8*Sat</span>
-            <span>9*Sun</span>
+            <span id="calendar-date-today" class="date1">1*오늘</span>
+            <span class="date2">2*내일</span>
+            <span class="date3">3*일</span>
+            <span class="date4">4*월</span>
+            <span class="date5">5*화</span>
+            <span class="date6">6*수</span>
+            <span class="date7">7*목</span>
             <span id="btn-next-date"><i class="fas fa-chevron-right"></i></span>
           </ul>
         </div>
-        <div class="btn-calendar">
-          <a href="#"><i class="fas fa-calendar-alt fa-2x"></i></a>
-        </div>
+        <button id="btn-calendar"><i class="fas fa-calendar-alt fa-2x"></i></button>
+        <div class="btn-calendar"></div>
         <div class="booking-grid-container">
           <!-- grid .item1 -->
           <div class="main-booking-movie">
@@ -186,6 +184,7 @@
       </div>
     </section>
     <script src="../script/booking.js"></script>
+    <script src="../script/bookingLocalStorage.js"></script>
   </body>
   <!-- footer -->
 </html>
