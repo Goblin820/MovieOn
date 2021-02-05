@@ -6,7 +6,7 @@ $(document).on('click', '.toggleBG', function () {
     toggleBG.css('background', '#CCCCCC');
     toggleActionStart(toggleFG, 'TO_LEFT');
   } else if (left == '0px') {
-    toggleBG.css('background', '#253E66');
+    toggleBG.css('background', 'red');
     toggleActionStart(toggleFG, 'TO_RIGHT');
   }
 });
@@ -25,3 +25,7 @@ function toggleActionStart(toggleBtn, LR) {
     clearInterval(intervalID);
   }, 201);
 }
+
+$(document).on('click', '.btn-movie-img-hover-booking', function(){
+  $(this).parent().setAttribute('href', "./bookingSeat.html");
+});
