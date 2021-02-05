@@ -7,14 +7,8 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  min-width: 1200px;
+  /* min-width: 1200px; */
   background-color: #272727;
-}
-#section {
-  margin: 0 auto;
-  border: 1px solid red;
-  height: 100%;
-  width: 100%;
 }
 h1,
 h2,
@@ -41,8 +35,10 @@ button {
 }
 /* main */
 #container {
-  width: 100%;
+  margin: 0 auto 0 auto;
   height: 100%;
+  width: 100%;
+  min-width: 1200px;
 }
 #main {
   display: flex;
@@ -50,7 +46,7 @@ button {
   justify-content: center;
 }
 #main-header {
-  width: 75%;
+  width: 1135px;
   margin: auto;
 }
 #main-top-wrap {
@@ -144,6 +140,7 @@ td {
     height: 100%; */
   width: 230px;
   height: 320px;
+  background-size: cover;
 }
 .movie-img {
   display: block;
