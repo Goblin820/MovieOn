@@ -4,7 +4,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 160vh;
   width: 100%;
   /* background-image: url('../resource/image/booking/bgimg.jpg'); */
   background-color: #272727;
@@ -203,18 +203,9 @@ span {
   margin: 10px;
 }
 #banner {
-  margin-bottom: 20px;
+  margin-top: 50px;
 }
 #banner img {
   width: 100%;
   border: none;
-}
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  width: 100%;
-  margin-top: 20px;
-  bottom: 0;
-  border: 1px solid #fff;
 }
