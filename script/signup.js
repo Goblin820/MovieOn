@@ -67,7 +67,7 @@ function SignupData() {
     name: '',
     nickname: '',
     email: '',
-    birth: null,
+    birth: '',
   };
   this.$inputs = {
     id: null,
@@ -85,6 +85,7 @@ function SignupData() {
     name: null,
     nickname: null,
     email: null,
+    brith: null,
   };
 }
 // 데이터 초기화
@@ -103,6 +104,7 @@ signupData.$warningLabels.passwordRe = $('#warning-userPassword-re');
 signupData.$warningLabels.name = $('#warning-userName');
 signupData.$warningLabels.nickname = $('#warning-userNickname');
 signupData.$warningLabels.email = $('#warning-userEmail');
+signupData.$warningLabels.birth = $('#warning-userBirth');
 
 // $(function () {
 function OnSignup() {
@@ -116,13 +118,12 @@ function OnSignup() {
       '필수항목 (4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능)'
     );
     check = false;
-  } else if (!validateId(signupData.userData.id)) {
+  } else if (!ValidateId(signupData.userData.id)) {
     signupData.$warningLabels.id.text(
       '4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능'
     );
     check = false;
   }
-
   // 비번 체크
   signupData.userData.password = signupData.$inputs.password.val();
   if (signupData.userData.password.length == 0) {
@@ -130,13 +131,12 @@ function OnSignup() {
       '필수항목 (6~20자 / 영어 및 숫자 포함)'
     );
     check = false;
-  } else if (!validatePassword(signupData.userData.password)) {
+  } else if (!ValidatePassword(signupData.userData.password)) {
     signupData.$warningLabels.password.text(
       '6~20자의 영어 및 숫자 포함하여 입력하세요!'
     );
     check = false;
   }
-
   // 비번 재확인 체크
   signupData.userData.passwordRe = signupData.$inputs.passwordRe.val();
   if (signupData.userData.passwordRe.length == 0) {
@@ -145,7 +145,7 @@ function OnSignup() {
     );
     check = false;
   } else if (
-    !validatePasswordConfirm(
+    !ValidatePasswordConfirm(
       signupData.userData.password,
       signupData.userData.passwordRe
     )
@@ -155,57 +155,82 @@ function OnSignup() {
     );
     check = false;
   }
-
   // 이름 체크
   signupData.userData.name = signupData.$inputs.name.val();
   if (signupData.userData.name == 0) {
-    signupData.$warningLabels.name.text('필수항목(2~20자의 한글만 입력 가능)');
+    signupData.$warningLabels.name.text('필수항목 (2~20자의 한글만 입력 가능)');
     check = false;
-  } else if (!validateName(signupData.userData.name)) {
+  } else if (!ValidateName(signupData.userData.name)) {
     signupData.$warningLabels.name.text('2~20자의 한글만 입력해주세요!');
     check = false;
   }
-
   // 이메일 체크
   signupData.userData.email = signupData.$inputs.email.val();
   if (signupData.userData.email == 0) {
-    signupData.$warningLabels.email.text('이메일 형식에 맞게 입력해주세요');
+    signupData.$warningLabels.email.text('필수항목 (이메일 형식에 맞게 입력!)');
     check = false;
-  } else if (!validateEmail(signupData.userData.email)) {
-    signupData.$warningLabels.email.text('');
+  } else if (!ValidateEmail(signupData.userData.email)) {
+    signupData.$warningLabels.email.text('이메일 형식에 맞게 입력해주세요!');
     check = false;
+  }
+  // 닉네임 체크
+  signupData.userData.nickname = signupData.$inputs.nickname.val();
+  if (
+    signupData.userData.nickname.length != 0 &&
+    !ValidateNickname(signupData.userData.nickname)
+  ) {
+    signupData.$warningLabels.nickname.text('3~10자 영문,한글,숫자 입력 가능');
+  }
+  // 생년월일 체크
+  signupData.userData.birth = signupData.$inputs.birth.val();
+  if (
+    signupData.userData.birth.length != 0 &&
+    !ValidateBirth(signupData.userData.birth)
+  ) {
+    signupData.$warningLabels.birth.text('생년월일을 제대로 선택해주세요.');
   }
 
   // 데이터 전송
-  submit();
+  if (check == true) Submit();
 }
 
-function validateId(id) {
+function ValidateId(id) {
   // 4~20자 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능
   const regExp = /^[a-z]+[a-z0-9]{3,19}/;
   return regExp.test(id);
 }
-function validatePassword(password) {
+function ValidatePassword(password) {
   // 6~20자 영어, 숫자 중 하나 이상 모두 포함
-  var regExp = /^(?=.{6,20})(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).*$/;
+  const regExp = /^(?=.{6,20})(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).*$/;
   return regExp.test(password);
 }
-function validatePasswordConfirm(password, passwordRe) {
+function ValidatePasswordConfirm(password, passwordRe) {
   return password == passwordRe;
 }
-function validateName(name) {
+function ValidateName(name) {
   // 2~20자 완성형 한글만
-  var regExp = /^[가-힣]+[가-힣]{1,19}$/;
+  const regExp = /^[가-힣]+[가-힣]{1,19}$/;
   return regExp.test(name);
 }
-function validateEmail(email) {
+function ValidateEmail(email) {
   // 이메일 형식에 맞게
-  var regExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const regExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return regExp.test(email);
+}
+function ValidateNickname(nickname) {
+  // 2~10자 영문,한글,숫자 입력 가능
+  const regExp = /^[a-zA-Z0-9가-힣]{2,10}$/;
+  return regExp.test(nickname);
+}
+function ValidateBirth(birth) {
+  console.log(birth);
+  // YYYY-MM-DD 형식
+  const regExp = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+  return regExp.test(birth);
 }
 
 // 서버 전송
-function submit() {}
+function Submit() {}
 
 // ------------- 초기화 ------------- //
 (function Init() {
