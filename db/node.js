@@ -23,3 +23,22 @@
 //   res.setHeader('Content-Type', 'text/plain');
 //   res.end('Hello World!');
 // });
+
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
+
+const app = http.createServer(function (request, response) {
+  let _url = request.url;
+  let queryData = url.parse(_url, true).query;
+  let pathname = url.parse(_url, true).pathname;
+  let dirName = __dirname.substring(0, __dirname.lastIndexOf('\\'));
+
+  if (request.url == '/') {
+    _url = '/html/serviceCenter.html';
+  }
+  response.writeHead(200);
+  response.end(fs.readFileSync(dirName + _url));
+});
+app.listen(3000);
