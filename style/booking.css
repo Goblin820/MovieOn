@@ -225,9 +225,6 @@ h3 {
   margin: 10px;
   text-align: left;
 }
-.theater-list-small li:hover {
-  text-decoration: underline;
-}
 /* time */
 .main-booking-time {
   background-color: #d9e2e1;
@@ -278,6 +275,7 @@ h3 {
   font-weight: 700;
 }
 #time-list li {
+  cursor: pointer;
   display: grid;
   grid-auto-flow: column;
   width: 100%;
@@ -323,6 +321,7 @@ h3 {
   border: 2px solid #fff;
   border-radius: 15px;
 }
+/* .selected */
 /* banner */
 #main-booking-bot {
   margin-top: 40px;
