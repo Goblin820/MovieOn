@@ -189,6 +189,7 @@ h3 {
   cursor: pointer;
   font-size: 15px;
   margin-top: 10px;
+  padding: 3px;
   text-align: left;
   width: 100%;
 }
@@ -222,8 +223,10 @@ h3 {
 .theater-list-small li {
   cursor: pointer;
   font-size: 15px;
-  margin: 10px;
+  margin-top: 10px;
+  padding: 3px;
   text-align: left;
+  width: 100%;
 }
 /* time */
 .main-booking-time {
@@ -321,7 +324,6 @@ h3 {
   border: 2px solid #fff;
   border-radius: 15px;
 }
-/* .selected */
 /* banner */
 #main-booking-bot {
   margin-top: 40px;
