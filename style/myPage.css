@@ -1,0 +1,42 @@
+body {
+  background-color: gray;
+}
+h1 {
+  border: blue 1px solid;
+  margin: 0;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+#nameAndEmail {
+  border: solid 1px red;
+  height: 200px;
+  text-align: center;
+  
+  
+ 
+}
+
+
+#unknown {
+  height: 300px;
+  border: solid 1px blue;
+}
+#reservation {
+  height: 200px;
+  border: solid 1px red;
+}
+#reservation div {
+  border: blue solid 1px;
+  border-radius: 50px;
+}
+
+#unknown div {
+  border: solid 1px red;
+  width: 49.6%;
+  height: 80px;
+  display: inline-block;
+}
+#unknown ul {
+  float: right;
+}
