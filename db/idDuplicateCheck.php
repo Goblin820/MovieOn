@@ -1,9 +1,9 @@
 <?php 
 
 require_once './sqlConnect.php';
-require_once './resultMassage.php';
+require_once './resultMessage.php';
 
-$resultMassage = new ResultMassage();
+$resultMassage = new ResultMessage();
 
 $id = $_REQUEST['id'];
 
@@ -11,14 +11,14 @@ $query = "SELECT id FROM user_signdata where id='$id'" ;
 $result = mysqli_query($connect, $query);
 if($result)
 {
-    $idSelectData = $result->fetch_array();
+    $selectData = $result->fetch_array();
     // 중복 된다면
-    if($idSelectData >= 1)
+    if($selectData >= 1)
     {
-        $resultMassage->ResultCheck(ResultMassage::ID_OVERLAP);
+        $resultMassage->ResultCheck(ResultMessage::ID_OVERLAP);
     }
     else{
-        $resultMassage->ResultCheck(ResultMassage::ID_NONE_OVERLAP);
+        $resultMassage->ResultCheck(ResultMessage::ID_NONE_OVERLAP);
     }
 }
 else{

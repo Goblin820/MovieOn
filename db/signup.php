@@ -1,9 +1,9 @@
 <?php 
 
 require_once './sqlConnect.php';
-require_once './resultMassage.php';
+require_once './resultMessage.php';
 
-$resultMesaage = new ResultMassage();
+$resultMessage = new ResultMessage();
 
 $id = $_REQUEST['id'];
 $password = $_REQUEST['password'];
@@ -23,12 +23,12 @@ if($result)
 
     if($result)
     {
-        $resultMesaage->ResultCheck(ResultMassage::SIGNUP_SUCCESS);
+        $resultMessage->ResultCheck(ResultMessage::SIGNUP_SUCCESS);
     }
     
 }
 else{
-    $resultMesaage->ResultCheck(ResultMassage::SIGNUP_FAIL, mysqli_error($connect));
+    $resultMessage->ResultCheck(ResultMessage::SIGNUP_FAIL, mysqli_error($connect));
 }
 
 
