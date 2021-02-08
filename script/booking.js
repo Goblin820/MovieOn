@@ -1,5 +1,21 @@
 var movieTempArray = [];
 var movieName = [];
+var datenow = new Date();
+// console.log(plusZero(datenow.getHours()-9));
+
+console.log(movieAll[0].available[0].info[0].duration);
+console.log(movieAll.length);
+console.log(movieAll[0].available.length);
+console.log(movieAll[0].available[0].info.length);
+
+function plusZero(hour) {
+  if(hour < 10) {
+     return "0"+hour;
+  }
+  else {
+    return hour;
+  }
+}
 
 // movie list toggle
 $(document).ready(function () {
@@ -19,8 +35,8 @@ $(document).ready(function () {
       } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
         $(this).css('background-color', 'rgb(217, 226, 225)');
         $(this).css('color', 'rgb(0, 0, 0)');
-        movieName = [];
-        localStorage.removeItem('selectedName');
+        // localStorage.removeItem('selectedName');
+        var names = localStorage.getItem('selectedName');
       }
     });
 });
@@ -170,5 +186,43 @@ $('.theater-list-big').click(function (e) {
   }
 });
 
+// 극장 소분류 선택
+$('.theater-list-small').click(function(e) {
+  var $selectedTheater = $(e.target).text();
+  localStorage.setItem('selectedLocation', $selectedTheater);
+})
+
+
+/*
+
+<ul id="time-list">
+  <li>
+    <div class="time-duration">17:30~19:35</div>
+    <div class="time-title">세 자매 l 2D</div>
+    <div class="time-info">동대문<br />8관<br />82/152</div>
+  </li>
+</ul> 
+
+*/
+
+
 // 타임라인 생성 (영화시간, 영화이름, {세부장소, 관, 좌석현황})
-function createTimeline(data) {}
+function createTimeline(data) {
+  var $timeline = $('#time-list');
+  var info = {
+    duration: data.duration,
+  }
+  const movieName = localStorage.getItem('selectedName');
+  const theaterName = localStorage.getItem('selectedLocation');
+  movieTimelines = [];
+  movieTimeline = [];
+  for(let i = 0; i < movieAll.length; i++) {
+    for(let j = 0; j < movieAll[i].available.length; j++) {
+      for(let k = 0; k < movieAll[i].available[j].info.length; k++) {
+        if(theaterName == movieAll[i][j][k]) {
+          
+        }
+      }
+    }
+  }
+}
