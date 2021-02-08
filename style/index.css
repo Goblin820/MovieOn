@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 body {
-  margin: 0px auto;
+  /* margin: 0px auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1100px; */
   background-image: url('../resource/image/index/bg.jpg');
   color: #f4f4f4;
   font-family: 'Noto Sans KR';
@@ -16,7 +16,8 @@ body a:visited {
 /*-------------------------------------*/
 #loginBar {
   height: 30px;
-  border: grey 1px solid;
+  /* border: grey 1px solid; */
+  border-bottom: #88888871 1px solid;
   margin: 0;
   padding-top: 2px;
   background-image: url('../resource/image/index/slidebg.jpg');
@@ -35,8 +36,8 @@ body a:visited {
 /*-------------------------------------*/
 
 #list {
-  height: 100px;
-  border: grey 1px solid;
+  height: 60px;
+  /* border: grey 1px solid; */
   margin: 0;
   padding: 0;
   text-align: center;
@@ -45,13 +46,19 @@ body a:visited {
 
 #list li {
   display: inline-block;
-  font-size: 30px;
+  font-size: 26px;
   padding-left: 8%;
+}
+#list img {
+  margin-top: 5px;
+  width: 120px;
+  height: 40px;
 }
 /*-------------------------------------*/
 #navList {
   height: 130px;
-  border: grey 1px solid;
+  border-top: #88888871 1px solid;
+  /* border: grey 1px solid; */
   margin: 0;
   display: none;
   background-image: url('../resource/image/index/slidebg.jpg');
