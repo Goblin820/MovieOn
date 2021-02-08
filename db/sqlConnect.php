@@ -12,14 +12,7 @@ if(mysqli_connect_errno()){
     die('SQL Connect Error: '. mysqli_connect_error());
 }
 else{
-    echo 'DB 접속 성공\n';
+    // echo '디비 연결 성공';
 }
 
-// DB 선택
-// mysqli_select_db($connect, 데이터베이스 이름) or die('DB 선택 실패');
-
-// SQL Query 실행
-// mysqli_query($connect, 쿼리문)
-
-// mysqli_fetch_array()
 ?>

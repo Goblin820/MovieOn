@@ -1,4 +1,3 @@
-<!-- 로그인 -->
 <div id="login-root">
   <div id="login-overlay-bg"></div>
   <div id="login-container">
@@ -10,11 +9,15 @@
         </button>
       </div>
       <section id="login-content">
-        <input type="text" placeholder="ID" />
-        <input type="text" placeholder="PASSWORD" />
-        <button>로그인</button>
-        <a id="login-signup" href="#none">회원가입</a>
+        <input id="login-id" type="text" placeholder="ID" />
+        <input id="login-password" type="text" placeholder="PASSWORD" />
+        <button onclick="OnLogin()">로그인</button>
+        <a id="login-signup" href="#none" onclick="MovingPageBySignup()">
+          회원가입
+        </a>
       </section>
     </div>
   </div>
 </div>
+
+<link rel="stylesheet" href="../style/login.css" />

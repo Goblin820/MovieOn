@@ -1,8 +1,16 @@
+/* COMMON */
+
 ul,
 li {
   padding: 0;
   margin: 0;
 }
+
+button {
+  cursor: pointer;
+}
+
+/* CONTAINER */
 
 #signup-container {
   margin: 100px auto;
@@ -50,6 +58,35 @@ li {
   outline: 2px solid #d09f67;
   outline-offset: -2px;
 }
+.signup-input-content > input[name='userId'] {
+  width: calc(70% - 20px);
+}
+
+.signup-checking-label {
+  font-size: 15px;
+  color: rgb(0, 210, 0);
+}
+#signup-id-checking-btn {
+  position: relative;
+  float: right;
+  margin-left: 10px;
+  width: 100px;
+  height: 32px;
+  background-color: rgb(214, 214, 214);
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+#signup-id-checking-btn:hover {
+  /* background-color: white; */
+  border: 2px solid #272727;
+  color: #272727;
+  transition: color 0.4s, background-color 0.4s;
+}
+
+#signup-id-checking-btn:focus {
+  outline: none;
+}
 
 .signup-input-content #signup-datePicker {
   width: 80px;
@@ -88,7 +125,6 @@ li {
   border: none;
   border-radius: 10px;
   color: rgb(235, 235, 235);
-  cursor: pointer;
   transition: color 0.4s, background-color 0.4s;
 }
 

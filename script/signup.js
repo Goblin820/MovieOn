@@ -106,6 +106,10 @@ signupData.$warningLabels.nickname = $('#warning-userNickname');
 signupData.$warningLabels.email = $('#warning-userEmail');
 signupData.$warningLabels.birth = $('#warning-userBirth');
 
+const checker = {
+  idDuplicate: false,
+};
+
 // $(function () {
 function OnSignup() {
   $('.warning-text').empty();
@@ -117,92 +121,105 @@ function OnSignup() {
 
   let check = true;
 
-  // // 아이디 체크
-  // signupData.userData.id = signupData.$inputs.id.val();
-  // if (signupData.userData.id.length == 0) {
-  //   signupData.$warningLabels.id.text(
-  //     '필수항목 (4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능)'
-  //   );
-  //   check = false;
-  // } else if (!ValidateId(signupData.userData.id)) {
-  //   signupData.$warningLabels.id.text(
-  //     '4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능'
-  //   );
-  //   check = false;
-  // }
-  // // 비번 체크
-  // signupData.userData.password = signupData.$inputs.password.val();
-  // if (signupData.userData.password.length == 0) {
-  //   signupData.$warningLabels.password.text(
-  //     '필수항목 (6~20자 / 영어 및 숫자 포함)'
-  //   );
-  //   check = false;
-  // } else if (!ValidatePassword(signupData.userData.password)) {
-  //   signupData.$warningLabels.password.text(
-  //     '6~20자의 영어 및 숫자 포함하여 입력하세요!'
-  //   );
-  //   check = false;
-  // }
-  // // 비번 재확인 체크
-  // signupData.userData.passwordRe = signupData.$inputs.passwordRe.val();
-  // if (signupData.userData.passwordRe.length == 0) {
-  //   signupData.$warningLabels.passwordRe.text(
-  //     '필수항목 (비밀번호와 똑같이 입력해주세요!)'
-  //   );
-  //   check = false;
-  // } else if (
-  //   !ValidatePasswordConfirm(
-  //     signupData.userData.password,
-  //     signupData.userData.passwordRe
-  //   )
-  // ) {
-  //   signupData.$warningLabels.passwordRe.text(
-  //     '비밀번호와 입력한 값이 같지 않습니다!'
-  //   );
-  //   check = false;
-  // }
-  // // 이름 체크
-  // signupData.userData.name = signupData.$inputs.name.val();
-  // if (signupData.userData.name == 0) {
-  //   signupData.$warningLabels.name.text('필수항목 (2~20자의 한글만 입력 가능)');
-  //   check = false;
-  // } else if (!ValidateName(signupData.userData.name)) {
-  //   signupData.$warningLabels.name.text('2~20자의 한글만 입력해주세요!');
-  //   check = false;
-  // }
-  // // 이메일 체크
-  // signupData.userData.email = signupData.$inputs.email.val();
-  // if (signupData.userData.email == 0) {
-  //   signupData.$warningLabels.email.text('필수항목 (이메일 형식에 맞게 입력!)');
-  //   check = false;
-  // } else if (!ValidateEmail(signupData.userData.email)) {
-  //   signupData.$warningLabels.email.text('이메일 형식에 맞게 입력해주세요!');
-  //   check = false;
-  // }
-  // // 닉네임 체크
-  // signupData.userData.nickname = signupData.$inputs.nickname.val();
-  // if (
-  //   signupData.userData.nickname.length != 0 &&
-  //   !ValidateNickname(signupData.userData.nickname)
-  // ) {
-  //   signupData.$warningLabels.nickname.text('3~10자 영문,한글,숫자 입력 가능');
-  // }
-  // // 생년월일 체크
-  // signupData.userData.birth = signupData.$inputs.birth.val();
-  // if (
-  //   signupData.userData.birth.length != 0 &&
-  //   !ValidateBirth(signupData.userData.birth)
-  // ) {
-  //   signupData.$warningLabels.birth.text('생년월일을 제대로 선택해주세요.');
-  // }
+  // 아이디 체크
+  check = IdGrammerCheck();
+  if (checker.idDuplicate == false) {
+    check = false;
+    alert('아이디 중복을 확인하세요!');
+  }
+
+  // 비번 체크
+  signupData.userData.password = signupData.$inputs.password.val();
+  if (signupData.userData.password.length == 0) {
+    signupData.$warningLabels.password.text(
+      '필수항목 (6~20자 / 영어 및 숫자 포함)'
+    );
+    check = false;
+  } else if (!ValidatePassword(signupData.userData.password)) {
+    signupData.$warningLabels.password.text(
+      '6~20자의 영어 및 숫자 포함하여 입력하세요!'
+    );
+    check = false;
+  }
+  // 비번 재확인 체크
+  signupData.userData.passwordRe = signupData.$inputs.passwordRe.val();
+  if (signupData.userData.passwordRe.length == 0) {
+    signupData.$warningLabels.passwordRe.text(
+      '필수항목 (비밀번호와 똑같이 입력해주세요!)'
+    );
+    check = false;
+  } else if (
+    !ValidatePasswordConfirm(
+      signupData.userData.password,
+      signupData.userData.passwordRe
+    )
+  ) {
+    signupData.$warningLabels.passwordRe.text(
+      '비밀번호와 입력한 값이 같지 않습니다!'
+    );
+    check = false;
+  }
+  // 이름 체크
+  signupData.userData.name = signupData.$inputs.name.val();
+  if (signupData.userData.name == 0) {
+    signupData.$warningLabels.name.text('필수항목 (2~20자의 한글만 입력 가능)');
+    check = false;
+  } else if (!ValidateName(signupData.userData.name)) {
+    signupData.$warningLabels.name.text('2~20자의 한글만 입력해주세요!');
+    check = false;
+  }
+  // 이메일 체크
+  signupData.userData.email = signupData.$inputs.email.val();
+  if (signupData.userData.email == 0) {
+    signupData.$warningLabels.email.text('필수항목 (이메일 형식에 맞게 입력!)');
+    check = false;
+  } else if (!ValidateEmail(signupData.userData.email)) {
+    signupData.$warningLabels.email.text('이메일 형식에 맞게 입력해주세요!');
+    check = false;
+  }
+  // 닉네임 체크
+  signupData.userData.nickname = signupData.$inputs.nickname.val();
+  if (
+    signupData.userData.nickname.length != 0 &&
+    !ValidateNickname(signupData.userData.nickname)
+  ) {
+    signupData.$warningLabels.nickname.text('3~10자 영문,한글,숫자 입력 가능');
+    check = false;
+  }
+  // 생년월일 체크
+  signupData.userData.birth = signupData.$inputs.birth.val();
+  if (
+    signupData.userData.birth.length != 0 &&
+    !ValidateBirth(signupData.userData.birth)
+  ) {
+    signupData.$warningLabels.birth.text('생년월일을 제대로 선택해주세요.');
+    check = false;
+  }
 
   // 데이터 전송
   if (check == true) Submit();
 }
+function IdGrammerCheck() {
+  if (signupData.userData.id.length == 0) {
+    signupData.$warningLabels.id.text(
+      '필수항목 (4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능)'
+    );
+    $('#signup-id-checking-label').empty();
+    return false;
+  } else if (!ValidateId(signupData.userData.id)) {
+    signupData.$warningLabels.id.text(
+      '4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능'
+    );
+    $('#signup-id-checking-label').empty();
+    return false;
+  }
+  signupData.$warningLabels.id.empty();
+  return true;
+}
 
 function ValidateId(id) {
   // 4~20자 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능
-  const regExp = /^[a-z]+[a-z0-9]{3,19}/;
+  const regExp = /^[a-z]+[a-z0-9]{3,19}$/;
   return regExp.test(id);
 }
 function ValidatePassword(password) {
@@ -235,14 +252,65 @@ function ValidateBirth(birth) {
   return regExp.test(birth);
 }
 
+function IdDuplicateCheck() {
+  signupData.userData.id = signupData.$inputs.id.val();
+  let grammerCheck = IdGrammerCheck();
+  if (grammerCheck == false) return false;
+
+  $.ajax({
+    url: '../db/idDuplicateCheck.php',
+    data: {
+      id: signupData.userData.id,
+    },
+    dataType: 'json',
+    type: 'get',
+    success: function (response) {
+      if (response == null) return;
+
+      // 중복
+      if (response.result == 101) {
+        $('#signup-id-checking-label').empty();
+        alert('중복된 아이디가 있습니다.');
+        checker.idDuplicate = false;
+      }
+      // 중복 아님!
+      else if (response.result == 102) {
+        $('#signup-id-checking-label').text('✔');
+        checker.idDuplicate = true;
+      }
+    },
+    error: function (request, status, error) {
+      alert('서버 연결에 실패하였습니다.(아이디 중복 체크)');
+      console.log(request + '\n');
+      console.log(status + '\n');
+      console.log(error + '\n');
+    },
+  });
+}
+
 // 서버 전송
 function Submit() {
   $.ajax({
     url: '../db/signup.php',
     data: signupData.userData,
-    type: 'post',
-    success: function (data) {
-      console.log(data);
+    dataType: 'json',
+    type: 'get',
+    success: function (response) {
+      if (response == null) return;
+      if (response.result == 201) {
+        alert('회원가입 되었습니다.');
+        window.location.href = '../html/index.html';
+      }
+
+      // 중복 아님!
+      else if (response.result == 202) {
+      }
+    },
+    error: function (request, status, error) {
+      alert('서버 연결에 실패하였습니다.(Submit)');
+      console.log(request + '\n');
+      console.log(status + '\n');
+      console.log(error + '\n');
     },
   });
 }

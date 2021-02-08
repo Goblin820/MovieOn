@@ -3,6 +3,18 @@
   margin-right: 24.5px !important;
 }
 
+#login-root {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 990;
+}
+
 #login-overlay-bg {
   position: fixed;
   overflow-y: scroll;
@@ -13,7 +25,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 990;
+  z-index: 991;
 }
 #login-container {
   position: fixed;
@@ -34,7 +46,7 @@
   max-width: 350px;
   height: 260px;
   background-color: white;
-  border-radius: 20px 20px 8px 8px;
+  border-radius: 22px 22px 8px 8px;
 }
 #login-title {
   display: flex;
@@ -66,6 +78,7 @@
   font-size: 0;
   background: url(../resource/image/icon/btn-close-header-notice.png) no-repeat
     0 top;
+  cursor: pointer;
 }
 #login-title > button:hover #login-close-btn {
   background-position-y: -15px;
@@ -76,8 +89,8 @@
 }
 #login-content input {
   margin: 5px 0;
-  padding: 0;
-  width: 100%;
+  padding: 0 5px;
+  width: calc(100% - 10px);
   height: 35px;
   border: 1px solid #dfdfdf;
 }
@@ -86,9 +99,18 @@
   padding: 0;
   width: 100%;
   height: 40px;
+  background-color: #272727;
   border: none;
-  background-color: #dfdfdf;
-  font-size: 15px;
+  border-radius: 10px;
+  color: rgb(235, 235, 235);
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s;
+}
+#login-content button:hover {
+  background-color: white;
+  border: 2px solid #272727;
+  color: #272727;
+  transition: color 0.4s, background-color 0.4s;
 }
 .login-ready__on button {
   color: white;
