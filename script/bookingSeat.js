@@ -1,12 +1,19 @@
 // 인원수 선택 시 좌석 수 동일하게 맞춤
-$(document).ready(function () {
-  var adultNum = $('.adult option:selected').val();
-  var adoleNum = $('.adole option:selected').val();
-  var seniorNum = $('.senior option:selected').val();
+var sel = document.getElementsByClassName('adult');
+function getTotalNumber(sel) {
+  var opt;
+  for (var i = 0, len = sel.options.length; i < len; i++) {
+    opt = sel.options[i];
+    if (opt.selected === true) {
+      break;
+    }
+  }
+  return opt;
+}
 
-  const maxPpl = adultNum + adoleNum + seniorNum;
-  console.log(maxPpl);
-});
+var opt = getTotalNumber(sel);
+
+console.log(opt.value);
 
 // 좌석 선택 시 css 추가, 선택좌석란에 추가
 const selection = document.getElementById('selection-seat');
