@@ -278,7 +278,14 @@ body {
   content: '';
   border-bottom: 1px solid gray;
 }
-
+/* 카카오 맵 */
+.contents-kakaoMap {
+  margin-bottom: 200px;
+}
+#kakao-map {
+  width: 400px;
+  height: 300px;
+}
 /* FAQ 페이지 */
 .faq-paging {
   position: relative;
