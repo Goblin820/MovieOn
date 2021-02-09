@@ -26,9 +26,14 @@ h3 {
   min-width: 1000px;
   margin: 0 auto;
 }
+.movie-booking-calendar {
+  width: 100%;
+  margin-left: -10px;
+}
 .movie-booking-calendar ul {
   padding: 10px;
   display: flex;
+  width: 100%;
   margin: 0;
   color: #999999;
   overflow-x: hidden;
@@ -40,21 +45,40 @@ h3 {
   cursor: pointer;
   font-size: 20px;
   width: 300px;
+  background-image: linear-gradient(
+    to right,
+    #314755 0%,
+    #26a0da 51%,
+    #314755 100%
+  );
+  margin: 10px;
   text-align: center;
-  border-top: 1px solid #999999;
-  border-bottom: 1px solid #999999;
-  color: #999999;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  color: #fff;
 }
 .movie-booking-calendar ul span:hover {
-  background-color: #d09f67;
-  color: #272727;
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
 }
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
 #btn-prev-date, #btn-next-date/*, #btn-prev-time, #btn-next-time*/ {
-  background-color: #d09f67;
-  color: #272727;
+  color: #fff;
   text-align: center;
-  border-left: 2px solid #242424;
-  border-right: 2px solid #242424;
+  border-left: 2px solid #999999;
+  border-right: 2px solid #999999;
   width: 10%;
 }
 #btn-prev-time,
@@ -65,8 +89,9 @@ h3 {
   cursor: pointer;
   padding: 5px;
   background-color: #242424;
-  color: #fff;
+  color: #cccccc;
   border: none;
+  margin-bottom: 10px;
 }
 .btn-calendar {
   position: absolute;
@@ -75,8 +100,9 @@ h3 {
   padding: 10px;
   margin: 0;
   width: 180px;
-  height: 230px;
+  height: 250px;
   background-color: #242424;
+  box-shadow: 2px 2px #242424;
   border: 2px solid #d09f67;
   color: #999999;
 }
@@ -313,7 +339,12 @@ h3 {
 }
 .btn-confirm {
   cursor: pointer;
-  background-color: #ee3233;
+  background-image: linear-gradient(
+    to right,
+    #d31027 0%,
+    #ea384d 51%,
+    #d31027 100%
+  );
   color: #fff;
   margin: 10px;
   padding: 5px;
@@ -323,7 +354,21 @@ h3 {
   font-weight: 700;
   border: 2px solid #fff;
   border-radius: 15px;
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  display: block;
 }
+.btn-confirm:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* banner */
 #main-booking-bot {
   margin-top: 40px;
@@ -331,4 +376,31 @@ h3 {
 /* footer */
 footer {
   border: 1px solid green;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }

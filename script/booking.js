@@ -4,7 +4,6 @@ var datenow = new Date();
 var MAX_DATE = '31-May-2021';
 // console.log(plusZero(datenow.getHours()-9));
 // console.log("Today's date: " + plusZero(datenow.getDate()));
-
 // console.log(movieAll[0].available[0].info[0].duration);
 
 function plusZero(hour) {
@@ -15,7 +14,7 @@ function plusZero(hour) {
   }
 }
 
-// movie list toggle
+// 영화 리스트 toggle
 $(document).ready(function () {
   $('#movie-list')
     .children()
@@ -25,14 +24,9 @@ $(document).ready(function () {
         $(this).css('color', 'rgb(255, 255, 255)');
         var name = $(e.target).text();
         var $nameOthers = $('#movie-list').children().not(e.target);
-        // if (movieNameArray.length > 1) {
-        //   alert('최대 1개의 영화까지 선택 가능합니다.');
-        //   movieName.pop();
-        //   $(this).css('background-color', 'rgb(217, 226, 225)');
-        //   $(this).css('color', 'rgb(0, 0, 0)');
-        // }
         $nameOthers.css('background-color', 'rgb(217, 226, 225)');
         $nameOthers.css('color', 'rgb(0, 0, 0)');
+        // localStorage에 영화이름 한개 저장
         if (movieNameArray.length == 1) {
           movieNameArray.pop();
           movieNameArray.push(name);
@@ -50,7 +44,7 @@ $(document).ready(function () {
     });
 });
 
-// theater list toggle
+// 영화 리스트 toggle
 $(document).ready(function () {
   $('.theater-list-big')
     .children()
@@ -80,7 +74,7 @@ $(document).ready(function () {
     });
 });
 
-// // timeline list toggle
+// 종합 인포 toggle
 $(document).ready(function () {
   $('#time-list')
     .children()
@@ -127,7 +121,7 @@ $(function () {
 const movieArray = JSON.parse(localStorage.getItem('movie'));
 const theaterArray = JSON.parse(localStorage.getItem('theater'));
 
-/**** MAIN FUNCTION CALLS ****/
+/********************* MAIN FUNCTION CALLS *********************/
 createMovieList(movieArray);
 createTheaterList(theaterArray);
 $(document).ready(function () {
@@ -137,7 +131,7 @@ $(document).ready(function () {
     createTimeline(movieAll);
   });
 });
-/******************************/
+/****************************************************************/
 
 // 영화 목록 생성 함수
 function createMovieList(data) {
@@ -232,11 +226,15 @@ function createTimeline(data) {
           console.log(movieName, data[i].movieNames);
           var selectedMovieName = data[i].movieNames;
           // console.log(selectedMovieName);
-          movieFound = true;
+          if (movieName == data[i].movieNames) {
+            movieFound = true;
+          }
 
           var selectedTheaterName = data[i].available[j].name;
           // console.log(selectedTheaterName);
-          theaterFound = true;
+          if (theaterName == data[i].available[j].name) {
+            theaterFound = true;
+          }
 
           var movieDuration = data[i].available[j].info[k].duration;
           var movieDurationSub = data[i].available[j].info[k].duration.substr(
