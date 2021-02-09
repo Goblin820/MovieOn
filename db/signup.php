@@ -18,8 +18,7 @@ VALUES ('$id', '$password', '$name', '$email', '$nickname', '$birth')";
 $result = mysqli_query($connect, $query);
 if($result)
 {
-    $rand = rand(100, 5000);
-    $query = "insert into user_bookmark (id, point) values('$id', '$rand')";
+    $query = "insert into user_bookmark (id) values('$id')";
     $result = mysqli_query($connect, $query);
 
     if($result)

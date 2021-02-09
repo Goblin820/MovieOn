@@ -4,43 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MovieOn</title>
-
-    <!-- 타이틀 아이콘  -->
-    <link
-      rel="icon"
-      type="image⁄x-icon"
-      href="../resource/image/icon/ico-movieon-title.png"
-    />
-    <!-- 스타일 시트 추가 -->
-    <link rel="stylesheet" href="../style/common.css" />
-    <link rel="stylesheet" href="../style/index.css" />
-    <link rel="stylesheet" href="../style/header.css" />
-
-    <!-- 라이브러리 추가 -->
     <script src="../lib/jquery-3.5.1.min.js"></script>
     <script src="//www.youtube.com/player_api"></script>
     <script src="../script/index/youtubelist.js"></script>
     <script src="../script/index/rollingtext.js"></script>
+    
   </head>
   <body>
     <section id="section">
-      <!------------------------ 헤더 메인 메뉴 ----------------------------->
       <ul id="loginBar">
-        <li class="li-left"><a href="./membership.html">멤버십</a></li>
-        <li class="li-left"><a href="./serviceCenter.html">고객센터</a></li>
-        <li id="login" class="li-right">
-          <a href="#none" onclick="OnLoginWindow()">로그인</a>
-        </li>
-        <li id="signup" class="li-right">
-          <a href="./signup.html">회원가입</a>
-        </li>
+        <li><a href="#">멤버십</a></li>
+        <li><a href="#">고객센터</a></li>
+        <li id="login"><a href="#" onclick="OnLoginWindow()">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">마이페이지</a></li>
       </ul>
       <div id="listAndnavList">
         <ul id="list">
-          <li><a href="./movie.html">영화</a></li>
-          <li><a href="./booking.html">예매</a></li>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">예매</a></li>
           <li>
-            <a href="./index.html"
+            <a href="#"
               ><img
                 src="../resource/image/index/movieOn.PNG"
                 alt=""
@@ -48,28 +32,28 @@
                 style="border-radius: 8px"
             /></a>
           </li>
-          <li><a href="./cinema.html">극장</a></li>
+          <li><a href="#">극장</a></li>
           <li style="padding-right: 8%"><a href="#">이벤트</a></li>
         </ul>
         <div id="navList">
           <ul id="a">
-            <li><a href="./movieSelect.html">상영 영화</a></li>
+            <li><a href="#">상영 영화</a></li>
+            <li><a href="#">상영 예정작</a></li>
           </ul>
           <ul id="b">
-            <li><a href="./booking.html">빠른예매</a></li>
-            <li><a href="#none">상영시간표</a></li>
+            <li><a href="#">빠른예매</a></li>
+            <li><a href="#">상영시간표</a></li>
           </ul>
           <ul id="c">
-            <li><a href="./cinema.html">지역별 극장</a></li>
-            <li><a href="#none">특별관</a></li>
+            <li><a href="#">지역별 극장</a></li>
+            <li><a href="#">특별관</a></li>
           </ul>
           <ul id="d">
-            <li><a href="#none">진행중 이벤트</a></li>
-            <li><a href="#none">지난 이벤트</a></li>
+            <li><a href="#">진행중 이벤트</a></li>
+            <li><a href="#">지난 이벤트</a></li>
           </ul>
         </div>
       </div>
-      <!------------------------------------------------------------------->
       <div id="pictures">
         <div class="slideshow-container">
           <div class="mySlides fade">
@@ -334,7 +318,7 @@
       </h1>
       <div id="player"></div>
     </section>
-    <!------------------------------ 푸터 ----------------------------->
+
     <footer id="footer">
       <img src="../resource/image/index/movieOn.PNG" alt="" width="150px" />
 
@@ -350,8 +334,10 @@
         <p>COPYRIGHT © MovieOn, Inc. All rights reserved</p>
       </div>
     </footer>
-    <!-------------------------------------------------------------------->
     <script src="../script/index/slideshow.js"></script>
+    <link rel="stylesheet" href="../style/common.css" />
+    <link rel="stylesheet" href="../style/index.css" />
+
     <script src="../script/login.js"></script>
   </body>
 </html>

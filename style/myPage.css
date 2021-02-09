@@ -1,78 +1,42 @@
 body {
-  background-image: url('../resource/image/index/bg.jpg');
- 
+  background-color: gray;
 }
 h1 {
+  border: blue 1px solid;
   margin: 0;
-  height: 60px;
+  height: 150px;
   display: flex;
   align-items: center;
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
-  color: #f4f4f4;
-  margin-top: 100px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 #nameAndEmail {
-  height: 230px;
+  border: solid 1px red;
+  height: 200px;
   text-align: center;
-  color: #f4f4f4;
-  font-size: 20px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  
+  
+ 
 }
+
 
 #unknown {
-  height: 100px;
-  color: #f4f4f4;
-  margin-top: 50px;
-}
-.unknownDiv {
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
-}
-.unknownDiv h3 {
-  font-size: 25px;
-  margin: 0;
-}
-
-#reservation h3 {
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
-
-  display: flex;
-  align-items: center;
-  font-size: 25px;
+  height: 300px;
+  border: solid 1px blue;
 }
 #reservation {
   height: 200px;
-  color: #f4f4f4;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-  margin-top: 80px;
-  margin-bottom: 80px;
+  border: solid 1px red;
 }
 #reservation div {
+  border: blue solid 1px;
   border-radius: 50px;
 }
 
 #unknown div {
-  width: 100%;
-
+  border: solid 1px red;
+  width: 49.6%;
+  height: 80px;
   display: inline-block;
 }
 #unknown ul {
   float: right;
-}
-
-#movieArray {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-}
-#point {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-  height: 300px;
-}
-#movieDb {
-  font-size: 25px;
-}
-#fin span{
- font-size: 22px;
 }

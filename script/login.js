@@ -20,6 +20,10 @@ function LoginRemove() {
   document.body.removeChild(loginRoot);
 }
 
+function MovingPageBySignup() {
+  window.location.href = '../html/signup.html';
+}
+
 const loginData = {
   id: '',
   password: '',
@@ -40,11 +44,11 @@ function OnLogin() {
   $.ajax({
     url: '../db/login.php',
     type: 'get',
-    dataType: 'json',
     data: {
       id: loginData.id,
       password: loginData.password,
     },
+    dataType: 'json',
     success: function (response) {
       if (response == null) return;
 
@@ -104,12 +108,9 @@ function LoginCheck() {
     dataType: 'text',
     success: function (response) {
       // 로그인 되어있는 아이디가 있는 경우
-      if (response.length != 0 && response.length < 50) {
-        $('#login').remove();
-        $('#signup').remove();
-        $('#loginBar')[0].innerHTML +=
-          '<li id="mypage" class="li-right"><a href="./myPage.html">마이페이지</a></li>' +
-          '<li class="li-right"><a href="#none" onclick="OnLogout()">로그아웃</a></li>';
+      if (response.length != 0) {
+        // $('#login').remove();
+        // $('#singup').remove();
       }
     },
     error: function (request, status, error) {
@@ -122,42 +123,3 @@ function LoginCheck() {
 }
 
 LoginCheck();
-
-// 마이 페이지 관련
-function MyPageDataSet() {
-  $.ajax({
-    url: '../db/myPage.php',
-    type: 'get',
-    dataType: 'json',
-    success: function (response) {
-      console.log(response.resultData);
-
-      let nickname = 'DEFULAT';
-      $('#name').text(response.resultData.id);
-
-      if (response.resultData.nickname.length != 0) {
-        nickname = response.resultData.nickname;
-      }
-      $('#nickname').text(nickname);
-      $('#email').text(response.resultData.email);
-      $('#score').text(response.resultData.point);
-    },
-    error: function (request, status, error) {
-      alert('서버 연결에 실패하였습니다.(마이페이지 데이터)');
-
-      console.log(request + '\n');
-      console.log(status + '\n');
-      console.log(error + '\n');
-      console.log(
-        'code:' +
-          request.status +
-          '\n' +
-          'message:' +
-          request.responseText +
-          '\n' +
-          'error:' +
-          error
-      );
-    },
-  });
-}

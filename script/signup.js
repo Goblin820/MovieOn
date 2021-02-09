@@ -107,26 +107,24 @@ signupData.$warningLabels.email = $('#warning-userEmail');
 signupData.$warningLabels.birth = $('#warning-userBirth');
 
 const checker = {
-  isDuplciateCheck: false,
-  beforeId: '',
+  idDuplicate: false,
 };
 
 // $(function () {
 function OnSignup() {
   $('.warning-text').empty();
 
+  signupData.userData.id = signupData.$inputs.id.val();
+  signupData.userData.password = signupData.$inputs.password.val();
+  signupData.userData.name = signupData.$inputs.name.val();
+  signupData.userData.birth = signupData.$inputs.birth.val();
+
   let check = true;
 
   // 아이디 체크
   check = IdGrammerCheck();
-  if (checker.beforeId != signupData.userData.id) {
-    checker.isDuplciateCheck = false;
-  }
-  checker.beforeId = signupData.userData.id;
-
-  if (checker.isDuplciateCheck == false) {
+  if (checker.idDuplicate == false) {
     check = false;
-    $('#signup-id-checking-label').empty();
     alert('아이디 중복을 확인하세요!');
   }
 
@@ -202,8 +200,6 @@ function OnSignup() {
   if (check == true) Submit();
 }
 function IdGrammerCheck() {
-  signupData.userData.id = signupData.$inputs.id.val();
-
   if (signupData.userData.id.length == 0) {
     signupData.$warningLabels.id.text(
       '필수항목 (4~20자 / 소문자부터 시작 / 숫자, 소문자 영문만 입력 가능)'
@@ -250,14 +246,16 @@ function ValidateNickname(nickname) {
   return regExp.test(nickname);
 }
 function ValidateBirth(birth) {
+  console.log(birth);
   // YYYY-MM-DD 형식
   const regExp = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
   return regExp.test(birth);
 }
 
 function IdDuplicateCheck() {
+  signupData.userData.id = signupData.$inputs.id.val();
   let grammerCheck = IdGrammerCheck();
-  if (grammerCheck == false) return;
+  if (grammerCheck == false) return false;
 
   $.ajax({
     url: '../db/idDuplicateCheck.php',
@@ -273,12 +271,12 @@ function IdDuplicateCheck() {
       if (response.result == 101) {
         $('#signup-id-checking-label').empty();
         alert('중복된 아이디가 있습니다.');
-        checker.isDuplciateCheck = false;
+        checker.idDuplicate = false;
       }
       // 중복 아님!
       else if (response.result == 102) {
         $('#signup-id-checking-label').text('✔');
-        checker.isDuplciateCheck = true;
+        checker.idDuplicate = true;
       }
     },
     error: function (request, status, error) {
@@ -304,7 +302,7 @@ function Submit() {
         window.location.href = '../html/index.html';
       }
 
-      // 회원 가입 실패
+      // 중복 아님!
       else if (response.result == 202) {
       }
     },

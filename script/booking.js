@@ -75,19 +75,19 @@ $(document).ready(function () {
 });
 
 // 종합 인포 toggle
-// $(document).ready(function () {
-//   $('#time-list')
-//     .children()
-//     .click(function () {
-//       if ($(this).css('color') == 'rgb(0, 0, 0)') {
-//         $(this).css('background-color', 'rgb(66, 66, 66)');
-//         $(this).css('color', 'rgb(255, 255, 255)');
-//       } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
-//         $(this).css('background-color', 'rgb(217, 226, 225)');
-//         $(this).css('color', 'rgb(0, 0, 0)');
-//       }
-//     });
-// });
+$(document).ready(function () {
+  $('#time-list')
+    .children()
+    .click(function () {
+      if ($(this).css('color') == 'rgb(0, 0, 0)') {
+        $(this).css('background-color', 'rgb(66, 66, 66)');
+        $(this).css('color', 'rgb(255, 255, 255)');
+      } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
+        $(this).css('background-color', 'rgb(217, 226, 225)');
+        $(this).css('color', 'rgb(0, 0, 0)');
+      }
+    });
+});
 
 // 캘린더 클릭 토글, 날짜 선택시 캘린더 navbar 조정
 $(function () {
@@ -259,6 +259,7 @@ $('.theater-list-small').click(function (e) {
 });
 
 // 타임라인 생성 (영화시간, 영화이름, {세부장소, 관, 좌석현황})
+let tempTime, tempTitle, tempInfo;
 function createTimeline(data) {
   var $timeline = $('#time-list');
   const movieName = localStorage.getItem('selectedName');
@@ -267,12 +268,13 @@ function createTimeline(data) {
     var movieFound = false;
     var theaterFound = false;
     for (let j = 0; j < data[i].available.length; j++) {
+      let localIndex = 0;
       for (let k = 0; k < data[i].available[j].info.length; k++) {
         if (
           movieName == data[i].movieNames &&
           theaterName == data[i].available[j].name
         ) {
-          // console.log(movieName, data[i].movieNames);
+          console.log(movieName, data[i].movieNames);
           var selectedMovieName = data[i].movieNames;
           // console.log(selectedMovieName);
           if (movieName == data[i].movieNames) {
@@ -330,6 +332,23 @@ function createTimeline(data) {
 
               $timeline.append(lists);
             }
+            localStorage.setItem(
+              'selectedDuration(' + localIndex + ')',
+              movieDuration
+            );
+            localStorage.setItem(
+              'selectedMovieSection(' + localIndex + ')',
+              movieSection
+            );
+            localStorage.setItem(
+              'selectedSeatAvail(' + localIndex + ')',
+              seatAvail
+            );
+            localStorage.setItem(
+              'selectedSeatMax(' + localIndex + ')',
+              seatMax
+            );
+            localIndex++;
           }
         }
       }
@@ -340,48 +359,23 @@ function createTimeline(data) {
 // 최종인포 선택
 $(document).ready(function () {
   $('#time-list').click(function (e) {
-    // var $selectedInfoLi = $('#selectedInfo');
-    // var $selectedInformation = $('#selectedInfo').not(e.target);
-    // $selectedInfoLi.addClass('selected');
-    e.target.addClass('selected');
-    // console.log($selectedInfoLi, $selectedInformation);
-    $selectedInfoLi.css('background-color', 'rgb(0,0,0)');
-    if (e.target.classList.contains('selected')) {
-      e.target.classList.toggle('selecting');
+    if (e.target.classList.contains('selectedInfo')) {
+      e.target.classList.toggle('selected');
+    } else if (
+      e.target.classList.contains('time-duration') ||
+      e.target.classList.contains('time-title') ||
+      e.target.classList.contains('time-info')
+    ) {
+      e.target.parentElement.classList.toggle('selected');
+      let currentSelectedInfo = $('#selectedInfo.selected').innerHTML;
+      console.log(currentSelectedInfo);
     }
   });
 });
 
 // 좌석선택 클릭 시 영화 정보 저장, 영화 미선택 시 alert
-// $('.btn-confirm').click(function (e) {});
-
-// $(document).ready(function () {
-//   $('#time-list')
-//     .children()
-//     .click(function (e) {
-//       console.log('time-list click On!!');
-//       const duration = $('.time-duration').text();
-//       const title = $('.time-title').text();
-//       const seat = $('.time-info').text();
-//       var $info = {
-//         duration: duration,
-//         title: title,
-//         seat: seat,
-//       };
-
-//       var $selectedInfo = $(e.target);
-//       var $infoOthers = $('#selectedInfo').not(e.target);
-//       localStorage.setItem('selectedInfo', $selectedInfo);
-//       // $('.theater-list-small').not('#selected').preventDefault();
-
-//       if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
-//         $(e.target).css('background-color', 'rgb(66, 66, 66)');
-//         $(e.target).css('color', 'rgb(255, 255, 255)');
-//       } else if ($(e.target).css('color') == 'rgb(255, 255, 255)') {
-//         $(e.target).css('background-color', 'rgb(217, 226, 225)');
-//         $(e.target).css('color', 'rgb(0, 0, 0)');
-//       }
-//       $infoOthers.css('background-color', 'rgb(217, 226, 225)');
-//       $infoOthers.css('color', 'rgb(0, 0, 0)');
-//     });
-// });
+$(document).ready(function () {
+  $('.btn-confirm').click(function () {
+    alert(localIndex);
+  });
+});
