@@ -41,10 +41,10 @@
   display: inline-block;
   font-size: 26px;
   padding-left: 8%;
-  margin-top: 8px;
 }
 #list img {
-  margin-top: -3px;
+  position: relative;
+  top: 9px;
   width: 120px;
   height: 40px;
 }
@@ -76,16 +76,16 @@
 
 #a {
   vertical-align: top;
-  margin-left: 13.5%;
+  margin-left: 17%;
 }
 #b {
-  margin-left: 2.7%;
+  margin-left: 6.2%;
 }
 #c {
-  margin-left: 21%;
+  margin-left: 25%;
 }
 #d {
-  margin-left: 2.5%;
+  margin-left: 5.7%;
 }
 #listAndnavList:hover #navList {
   display: block;
