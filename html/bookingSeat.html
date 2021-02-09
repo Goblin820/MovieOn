@@ -6,8 +6,9 @@
     <title>좌석선택 l Movie On</title>
     <link rel="stylesheet" href="../style/common.css" />
     <link rel="stylesheet" href="../style/bookingSeat.css" />
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/header.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <script src="../lib/jquery-3.5.1.min.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -64,7 +65,7 @@
             <h3>관람인원선택</h3>
             <div id="selection-ppl">
               <label>성인</label>
-              <select id="movie">
+              <select id="movie" class="adult">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -72,7 +73,7 @@
                 <option value="4">4</option>
               </select>
               <label>청소년</label>
-              <select id="movie">
+              <select id="movie" class="adole">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -80,7 +81,7 @@
                 <option value="4">4</option>
               </select>
               <label>우대/아동</label>
-              <select id="movie">
+              <select id="movie" class="senior">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -92,10 +93,11 @@
               <div class="screen"></div>
 
               <div class="row-odd">
-                <div class="seat"></div>
+                <div class="seat-num">A</div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat occupied"></div>
+                <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -106,7 +108,38 @@
                 <div class="seat"></div>
               </div>
               <div class="row-even">
+                <div class="seat-num">B</div>
+                <div class="seat"></div>
                 <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row-odd">
+                <div class="seat-num">C</div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row-even">
+                <div class="seat-num">D</div>
+                <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -120,6 +153,37 @@
                 <div class="seat"></div>
               </div>
               <div class="row-odd">
+                <div class="seat-num">E</div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row-even">
+                <div class="seat-num">F</div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+              </div>
+              <div class="row-odd">
+                <div class="seat-num">G</div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -134,53 +198,27 @@
                 <div class="seat"></div>
               </div>
               <div class="row-even">
+                <div class="seat-num">H</div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
+                <div class="seat occupied"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
               </div>
               <div class="row-odd">
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-              </div>
-              <div class="row-even">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
+                <div class="seat-num">I</div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-              </div>
-              <div class="row-odd">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -190,7 +228,7 @@
                 <div class="seat"></div>
               </div>
               <div class="row-even">
-                <div class="seat occupied"></div>
+                <div class="seat-num">J</div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
@@ -198,40 +236,15 @@
                 <div class="seat"></div>
                 <div class="seat occupied"></div>
                 <div class="seat"></div>
+                <div class="seat occupied"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
               </div>
               <div class="row-odd">
+                <div class="seat-num">K</div>
                 <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-              </div>
-              <div class="row-even">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-              </div>
-              <div class="row-odd">
                 <div class="seat"></div>
                 <div class="seat occupied"></div>
                 <div class="seat"></div>
@@ -243,19 +256,19 @@
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
-                <div class="seat occupied"></div>
               </div>
               <div class="row-even">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
+                <div class="seat-num">L</div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
                 <div class="seat occupied"></div>
                 <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
                 <div class="seat occupied"></div>
                 <div class="seat"></div>
+                <div class="seat occupied"></div>
                 <div class="seat"></div>
                 <div class="seat"></div>
               </div>
@@ -360,6 +373,6 @@
         <p>COPYRIGHT © MovieOn, Inc. All rights reserved</p>
       </div>
     </footer> -->
-    <script src="../script/booking-seat.js"></script>
+    <script src="../script/bookingSeat.js"></script>
   </body>
 </html>

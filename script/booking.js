@@ -3,8 +3,9 @@ var movieNameArray = [];
 var datenow = new Date();
 var MAX_DATE = '31-May-2021';
 // console.log(plusZero(datenow.getHours()-9));
+// console.log("Today's date: " + plusZero(datenow.getDate()));
 
-// console.log(movieAll[0].available[0].info[0].duratio
+// console.log(movieAll[0].available[0].info[0].duration);
 
 function plusZero(hour) {
   if (hour < 10) {
@@ -102,9 +103,9 @@ $(function () {
       minDate: 0,
       maxDate: MAX_DATE,
       onSelect: function (date) {
+        const dd = date.substring(0, 2);
+        console.log(dd);
         alert(date + '를 선택하였습니다.'), $(this).hide();
-        console.log(date.substring(0, 2));
-        // console.log($(this).date.getDate());
       },
     })
     .hide();
@@ -126,8 +127,17 @@ $(function () {
 const movieArray = JSON.parse(localStorage.getItem('movie'));
 const theaterArray = JSON.parse(localStorage.getItem('theater'));
 
+/**** MAIN FUNCTION CALLS ****/
 createMovieList(movieArray);
 createTheaterList(theaterArray);
+$(document).ready(function () {
+  $('.theater-list-small').click(function () {
+    // reset
+    document.getElementById('time-list').innerHTML = '';
+    createTimeline(movieAll);
+  });
+});
+/******************************/
 
 // 영화 목록 생성 함수
 function createMovieList(data) {
@@ -281,31 +291,34 @@ function createTimeline(data) {
 }
 
 // 최종인포 선택
-$('#time-list').click(function (e) {
-  var $info = [];
-  const duration = $('.time-duration').text();
-  const title = $('.time-title').text();
-  const seat = $('.time-info').text();
+$('#time-list')
+  .children()
+  .first()
+  .click(function (e) {
+    const duration = $('.time-duration').text();
+    const title = $('.time-title').text();
+    const seat = $('.time-info').text();
+    var $info = {
+      duration: duration,
+      title: title,
+      seat: seat,
+    };
 
-  var $selectedInfo = $(e.target).text();
-  var $infoOthers = $('#selectedInfo').children().not(e.target);
-  localStorage.setItem('selectedInfo', $selectedInfo);
-  // $('.theater-list-small').not('#selected').preventDefault();
-  if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
-    $(e.target).css('background-color', 'rgb(66, 66, 66)');
-    $(e.target).css('color', 'rgb(255, 255, 255)');
-  } else if ($(e.target).css('color') == 'rgb(255, 255, 255)') {
-    $(e.target).css('background-color', 'rgb(217, 226, 225)');
-    $(e.target).css('color', 'rgb(0, 0, 0)');
-  }
-  $infoOthers.css('background-color', 'rgb(217, 226, 225)');
-  $infoOthers.css('color', 'rgb(0, 0, 0)');
-});
-
-$(document).ready(function () {
-  $('.theater-list-small').click(function () {
-    // reset
-    document.getElementById('time-list').innerHTML = '';
-    createTimeline(movieAll);
+    var $selectedInfo = $(e.target);
+    var $infoOthers = $('#selectedInfo').not(e.target);
+    localStorage.setItem('selectedInfo', $selectedInfo);
+    // $('.theater-list-small').not('#selected').preventDefault();
+    $('.');
+    if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
+      $(e.target).css('background-color', 'rgb(66, 66, 66)');
+      $(e.target).css('color', 'rgb(255, 255, 255)');
+    } else if ($(e.target).css('color') == 'rgb(255, 255, 255)') {
+      $(e.target).css('background-color', 'rgb(217, 226, 225)');
+      $(e.target).css('color', 'rgb(0, 0, 0)');
+    }
+    $infoOthers.css('background-color', 'rgb(217, 226, 225)');
+    $infoOthers.css('color', 'rgb(0, 0, 0)');
   });
-});
+
+// 좌석선택 클릭 시 영화 정보 저장, 영화 미선택 시 alert
+$('.btn-confirm').click(function (e) {});
