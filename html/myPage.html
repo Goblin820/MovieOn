@@ -86,7 +86,10 @@
       <script src="../script/index/mypage.js"></script>
       <div id="reservation">
         <h3>예매내역</h3>
-        <p id="MN">극장판 귀멸의 칼날</p> <p id="PN">무비온</p>
+        <div id="fin">
+          <span id="MN"></span>
+          <span>MovieOn </span><span id="PN"></span><span>점 </span>
+        </div>
       </div>
     </section>
     <footer id="footer">
@@ -110,6 +113,12 @@
     <script src="../script/login.js"></script>
     <script>
       MyPageDataSet();
+    </script>
+    <script>
+      const movieN = localStorage.getItem('selectedName');
+      const placeN = localStorage.getItem('selectedLocation');
+      document.getElementById('MN').innerText = movieN;
+      document.getElementById('PN').innerText = placeN;
     </script>
   </body>
 </html>
