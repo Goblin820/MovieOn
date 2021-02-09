@@ -25,56 +25,57 @@
     ></script>
   </head>
   <body>
+    <!------------------------ 헤더 메인 메뉴 ----------------------------->
+    <header id="header">
+      <div id="stickyBlock"></div>
+      <ul id="loginBar">
+        <li class="li-left"><a href="./membership.html">멤버십</a></li>
+        <li class="li-left"><a href="./serviceCenter.html">고객센터</a></li>
+        <li id="login" class="li-right">
+          <a href="#none" onclick="OnLoginWindow()">로그인</a>
+        </li>
+        <li id="signup" class="li-right">
+          <a href="./signup.html">회원가입</a>
+        </li>
+      </ul>
+      <div id="listAndnavList">
+        <ul id="list">
+          <li><a href="./movie.html">영화</a></li>
+          <li><a href="./booking.html">예매</a></li>
+          <li>
+            <a href="./index.html"
+              ><img
+                src="../resource/image/index/movieOn.PNG"
+                alt=""
+                height="70px"
+                style="border-radius: 8px"
+            /></a>
+          </li>
+          <li><a href="./cinema.html">극장</a></li>
+          <li style="padding-right: 8%"><a href="#">이벤트</a></li>
+        </ul>
+        <div id="navList">
+          <ul id="a">
+            <li><a href="./movieSelect.html">상영 영화</a></li>
+          </ul>
+          <ul id="b">
+            <li><a href="./booking.html">빠른예매</a></li>
+            <li><a href="#none">상영시간표</a></li>
+          </ul>
+          <ul id="c">
+            <li><a href="./cinema.html">지역별 극장</a></li>
+            <li><a href="#none">특별관</a></li>
+          </ul>
+          <ul id="d">
+            <li><a href="#none">진행중 이벤트</a></li>
+            <li><a href="#none">지난 이벤트</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!------------------------------------------------------------------->
     <!-- 섹션 -->
     <section id="section">
-      <!------------------------ 헤더 메인 메뉴 ----------------------------->
-      <header id="header">
-        <ul id="loginBar">
-          <li class="li-left"><a href="./membership.html">멤버십</a></li>
-          <li class="li-left"><a href="./serviceCenter.html">고객센터</a></li>
-          <li id="login" class="li-right">
-            <a href="#none" onclick="OnLoginWindow()">로그인</a>
-          </li>
-          <li id="signup" class="li-right">
-            <a href="./signup.html">회원가입</a>
-          </li>
-        </ul>
-        <div id="listAndnavList">
-          <ul id="list">
-            <li><a href="./movie.html">영화</a></li>
-            <li><a href="./booking.html">예매</a></li>
-            <li>
-              <a href="./index.html"
-                ><img
-                  src="../resource/image/index/movieOn.PNG"
-                  alt=""
-                  height="70px"
-                  style="border-radius: 8px"
-              /></a>
-            </li>
-            <li><a href="./cinema.html">극장</a></li>
-            <li style="padding-right: 8%"><a href="#">이벤트</a></li>
-          </ul>
-          <div id="navList">
-            <ul id="a">
-              <li><a href="./movieSelect.html">상영 영화</a></li>
-            </ul>
-            <ul id="b">
-              <li><a href="./booking.html">빠른예매</a></li>
-              <li><a href="#none">상영시간표</a></li>
-            </ul>
-            <ul id="c">
-              <li><a href="./cinema.html">지역별 극장</a></li>
-              <li><a href="#none">특별관</a></li>
-            </ul>
-            <ul id="d">
-              <li><a href="#none">진행중 이벤트</a></li>
-              <li><a href="#none">지난 이벤트</a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <!------------------------------------------------------------------->
       <!-- 사이드 메뉴 -->
       <aside id="sideMenu">
         <nav id="lnb">
