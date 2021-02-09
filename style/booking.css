@@ -2,9 +2,9 @@ html {
   box-sizing: border-box;
 }
 body {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: #272727;
 }
@@ -375,9 +375,11 @@ h3 {
 /* banner */
 #main-booking-bot {
   margin-top: 40px;
-  margin-bottom: 20px;
 }
 /* footer */
+footer {
+  border: 1px solid green;
+}
 
 #selected {
   cursor: pointer;
@@ -404,38 +406,4 @@ h3 {
   background-position: right center;
   color: #fff;
   text-decoration: none;
-}
-
-.selected {
-  cursor: pointer;
-  font-size: 20px;
-  width: 100%;
-  background-image: linear-gradient(
-    to right,
-    #d31027 0%,
-    #ea384d 51%,
-    #d31027 100%
-  );
-  text-align: left;
-  transition: 0.3s;
-  /* background-size: 200% auto; */
-  color: white;
-  /* box-shadow: 0 0 20px #eee; */
-  border-radius: 10px;
-  display: block;
-}
-
-.selected:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
-}
-footer {
-  display: flex;
-}
-.footer-info {
-  height: 100%;
-}
-.footer-info p:nth-child(1) {
-  top: 0;
 }

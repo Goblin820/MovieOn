@@ -4,7 +4,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  height: 120vh;
+  height: 160vh;
   width: 100%;
   /* background-image: url('../resource/image/booking/bgimg.jpg'); */
   background-color: #272727;
@@ -277,12 +277,8 @@ span {
 }
 #banner {
   margin-top: 50px;
-  margin-bottom: 0px;
 }
 #banner img {
   width: 100%;
   border: none;
-}
-footer {
-  display: flex;
 }

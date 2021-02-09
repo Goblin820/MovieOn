@@ -67,6 +67,7 @@ ServiceCenterFetchByMain();
 // ------------ FAQ 관련 ------------- //
 function initFAQClickEvent() {
   $('.faq-list-btn').click(FAQListOnClick);
+  CreateKakaomap();
 }
 // FAQ 리스트 클릭시 클래스 추가 및 제거
 function FAQListOnClick() {
@@ -184,4 +185,62 @@ function search(page) {
   }).done(function () {
     initFAQClickEvent();
   });
+}
+
+// ------ 카카오 맵 관련 ------- //
+let container = null;
+let options = null;
+let map = null;
+function CreateKakaomap() {
+  if (options != null) return;
+
+  container = document.getElementById('kakao-map'); //지도를 담을 영역의 DOM 레퍼런스
+
+  let position = new kakao.maps.LatLng(37.53915264981527, 127.12296544442889);
+  options = {
+    center: position, //지도의 중심좌표.
+    level: 3, //지도의 레벨(확대, 축소 정도)
+  };
+
+  map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+  // 마커가 표시될 위치입니다
+  // 37.54030557474747, 127.1232347846574
+  // new kakao.maps.LatLng(33.450701, 126.570667)
+
+  // 마커를 생성합니다
+  var marker = new kakao.maps.Marker({
+    map: map,
+    position: position,
+  });
+
+  var infowindow = new kakao.maps.InfoWindow({
+    content: '<div>무비온 본사</div>', // 인포윈도우에 표시할 내용
+  });
+
+  // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+  // 이벤트 리스너로는 클로저를 만들어 등록합니다
+  // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+  kakao.maps.event.addListener(
+    marker,
+    'mouseover',
+    makeOverListener(map, marker, infowindow)
+  );
+  kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+  // 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);
+}
+// 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+function makeOverListener(map, marker, infowindow) {
+  return function () {
+    infowindow.open(map, marker);
+  };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다
+function makeOutListener(infowindow) {
+  return function () {
+    infowindow.close();
+  };
 }

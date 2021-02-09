@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>지역별극장</title>
 
     <link rel="stylesheet" href="../style/cinema.css" />
-    <link rel="stylesheet" href="../style/header.css" />
+    <link rel="stylesheet" href="../style/mypageheader.css" />
     <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/common.css" />
     <script
       type="text/javascript"
       nonce="9b6ccbda7cc24095b619c3cee33"
@@ -21,50 +22,52 @@
   </head>
   <body>
     <!-- ------------------------------------------------------------------------------------ 헤더 이부분 복붙후 css header 추가--------------------------------->
-    <ul id="loginBar">
-      <li><a href="#">멤버십</a></li>
-      <li><a href="#">고객센터</a></li>
-      <li id="login"><a href="#">로그인</a></li>
-      <li><a href="#">회원가입</a></li>
-      <li><a href="#">마이페이지</a></li>
-    </ul>
-    <div id="listAndnavList">
-      <ul id="list">
-        <li style="padding-top: 8px"><a href="#">영화</a></li>
-        <li style="padding-top: 8px"><a href="#">예매</a></li>
-        <li>
-          <a href="#"
-            ><img
-              src="../resource/image/index/movieOn.PNG"
-              alt=""
-              height="70px"
-              style="border-radius: 8px"
-          /></a>
+    <section id="section">
+      <ul id="loginBar">
+        <li class="li-left"><a href="./membership.html">멤버십</a></li>
+        <li class="li-left"><a href="./serviceCenter.html">고객센터</a></li>
+        <li id="login" class="li-right">
+          <a href="#none" onclick="OnLoginWindow()">로그인</a>
         </li>
-        <li style="padding-top: 8px"><a href="#">극장</a></li>
-        <li style="padding-right: 8%; padding-top: 8px">
-          <a href="#">이벤트</a>
+        <li id="signup" class="li-right">
+          <a href="./signup.html">회원가입</a>
         </li>
       </ul>
-      <div id="navList">
-        <ul id="a">
-          <li><a href="#">상영 영화</a></li>
-          <li><a href="#">상영 예정작</a></li>
+      <div id="listAndnavList">
+        <ul id="list">
+          <li><a href="./movie.html">영화</a></li>
+          <li><a href="./booking.html">예매</a></li>
+          <li>
+            <a href="./index.html"
+              ><img
+                src="../resource/image/index/movieOn.PNG"
+                alt=""
+                height="70px"
+                style="border-radius: 8px"
+            /></a>
+          </li>
+          <li><a href="./cinema.html">극장</a></li>
+          <li style="padding-right: 8%"><a href="#">이벤트</a></li>
         </ul>
-        <ul id="b">
-          <li><a href="#">빠른예매</a></li>
-          <li><a href="#">상영시간표</a></li>
-        </ul>
-        <ul id="c">
-          <li><a href="#">지역별 극장</a></li>
-          <li><a href="#">특별관</a></li>
-        </ul>
-        <ul id="d">
-          <li><a href="#">진행중 이벤트</a></li>
-          <li><a href="#">지난 이벤트</a></li>
-        </ul>
+        <div id="navList">
+          <ul id="a">
+            <li><a href="./movieSelect.html">상영 영화</a></li>
+          </ul>
+          <ul id="b">
+            <li><a href="./booking.html">빠른예매</a></li>
+            <li><a href="#none">상영시간표</a></li>
+          </ul>
+          <ul id="c">
+            <li><a href="./cinema.html">지역별 극장</a></li>
+            <li><a href="#none">특별관</a></li>
+          </ul>
+          <ul id="d">
+            <li><a href="#none">진행중 이벤트</a></li>
+            <li><a href="#none">지난 이벤트</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
     <!-- --------------------------------------------------------------------------------------------------------- --------------------------------->
     <h1>지역별 극장</h1>
     <div class="wrapper">
@@ -282,12 +285,12 @@
       <img
         src="https://img.megabox.co.kr/SharedImg/event/2021/02/02/74YJApKf5iYsGIxkib0zK6Q1CybC3Sta.jpg"
         alt=""
-        width="49.8%"
+        width="49.7%"
       />
       <img
         src="https://img.megabox.co.kr/SharedImg/event/2021/02/04/ae12kTFuLtLSpjLFiSdiJJAtA82hvJk9.jpg"
         alt=""
-        width="49.8%"
+        width="49.7%"
       />
     </div>
     <!-- ------------------------------------------------------------------------------------ 푸터 이부분 복붙후 css footer 추가--------------------------------->
