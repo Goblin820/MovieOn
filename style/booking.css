@@ -15,6 +15,9 @@ h3 {
   padding-left: 10px;
   color: #fff;
 }
+#main-booking-top h1 {
+  cursor: pointer;
+}
 #main-header {
   background-color: #000;
   margin-top: 0;
@@ -378,17 +381,17 @@ footer {
   border: 1px solid green;
 }
 
-.btn-grad {
+#selected {
+  cursor: pointer;
+  font-size: 20px;
+  width: 300px;
   background-image: linear-gradient(
     to right,
-    #e52d27 0%,
-    #b31217 51%,
-    #e52d27 100%
+    #d31027 0%,
+    #ea384d 51%,
+    #d31027 100%
   );
-}
-.btn-grad {
   margin: 10px;
-  padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -399,8 +402,8 @@ footer {
   display: block;
 }
 
-.btn-grad:hover {
-  background-position: right center; /* change the direction of the change here */
+#selected:hover {
+  background-position: right center;
   color: #fff;
   text-decoration: none;
 }

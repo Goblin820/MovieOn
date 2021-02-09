@@ -113,6 +113,9 @@ span {
 .seat.occupied {
   background-color: #009966;
 }
+.seat.selecting {
+  background-color: brown;
+}
 .seat:nth-of-type(3) {
   margin-right: 18px;
 }
@@ -121,6 +124,7 @@ span {
 }
 .seat:not(.occupied):hover {
   cursor: pointer;
+  transform: scale(1.2);
   background-color: #ffff66;
 }
 #review .seat:not(.occupied):hover {
@@ -145,10 +149,12 @@ span {
 .row-odd .seat:nth-of-type(odd) {
   cursor: default;
   background-color: #cccccc;
+  transform: scale(1);
 }
 .row-even .seat:nth-of-type(even) {
   cursor: default;
   background-color: #cccccc;
+  transform: scale(1);
 }
 .row-odd .seat:nth-child(1) {
   cursor: default;

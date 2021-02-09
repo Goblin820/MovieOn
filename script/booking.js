@@ -1,7 +1,7 @@
 var movieTempArray = [];
 var movieNameArray = [];
 var datenow = new Date();
-var MAX_DATE = '31-May-2021';
+var MAX_DATE = '05월31일2021';
 // console.log(plusZero(datenow.getHours()-9));
 // console.log("Today's date: " + plusZero(datenow.getDate()));
 // console.log(movieAll[0].available[0].info[0].duration);
@@ -75,30 +75,82 @@ $(document).ready(function () {
 });
 
 // 종합 인포 toggle
-$(document).ready(function () {
-  $('#time-list')
-    .children()
-    .click(function () {
-      if ($(this).css('color') == 'rgb(0, 0, 0)') {
-        $(this).css('background-color', 'rgb(66, 66, 66)');
-        $(this).css('color', 'rgb(255, 255, 255)');
-      } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
-        $(this).css('background-color', 'rgb(217, 226, 225)');
-        $(this).css('color', 'rgb(0, 0, 0)');
-      }
-    });
-});
+// $(document).ready(function () {
+//   $('#time-list')
+//     .children()
+//     .click(function () {
+//       if ($(this).css('color') == 'rgb(0, 0, 0)') {
+//         $(this).css('background-color', 'rgb(66, 66, 66)');
+//         $(this).css('color', 'rgb(255, 255, 255)');
+//       } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
+//         $(this).css('background-color', 'rgb(217, 226, 225)');
+//         $(this).css('color', 'rgb(0, 0, 0)');
+//       }
+//     });
+// });
 
 // 캘린더 클릭 토글, 날짜 선택시 캘린더 navbar 조정
 $(function () {
   $('.btn-calendar')
     .datepicker({
-      dateFormat: 'dd-MM-yy',
+      dateFormat: 'mm월dd일(yy년)',
+      dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+      monthNames: [
+        '1월',
+        '2월',
+        '3월',
+        '4월',
+        '5월',
+        '6월',
+        '7월',
+        '8월',
+        '9월',
+        '10월',
+        '11월',
+        '12월',
+      ],
+      nextText: '다음달',
+      prevText: '이전달',
       minDate: 0,
       maxDate: MAX_DATE,
       onSelect: function (date) {
-        const dd = date.substring(0, 2);
-        console.log(dd);
+        let ddInt = parseInt(plusZero(date.substring(3, 5)));
+        // 캘린더 navbar 조정
+        var $dates = $('.movie-booking-calendar ul');
+        const btnPrev =
+          '<span id="btn-prev-date"><i class="fas fa-chevron-left"></i></span>';
+        const btnNext =
+          '<span id="btn-next-date"><i class="fas fa-chevron-right"></i></span>';
+        $dates.empty();
+        for (let i = 0; i < 9; i++) {
+          let lists = '<span>' + ddInt + '일</span>';
+          if (i == 0) {
+            $dates.append(btnPrev);
+          } else if (i == 8) {
+            $dates.append(btnNext);
+          } else if (i == 1) {
+            if (ddInt >= 28) {
+              $dates.append('<span id="selected">' + ddInt + '일</span>');
+              ddInt = 1;
+            } else {
+              $dates.append('<span id="selected">' + ddInt + '일</span>');
+              ddInt++;
+            }
+          } else {
+            if (ddInt >= 28) {
+              $dates.append(lists);
+              ddInt = 1;
+            } else {
+              $dates.append(lists);
+              ddInt++;
+            }
+          }
+        }
+
+        // prev, next 버튼 클릭 시 날짜 이동
+        const btnPrevCal = $('#btn-prev-date');
+
+        localStorage.setItem('date', date);
         alert(date + '를 선택하였습니다.'), $(this).hide();
       },
     })
@@ -160,8 +212,7 @@ $('.theater-list-big').click(function (e) {
       $('.theater-list-small').empty();
       for (let i = 0; i < theaterAll[0].nameSpecific.length; i++) {
         var $theaterListSmall = $('.theater-list-small');
-        var lists =
-          '<li id="selected">' + theaterAll[0].nameSpecific[i] + '</li>';
+        var lists = '<li>' + theaterAll[0].nameSpecific[i] + '</li>';
         $theaterListSmall.append(lists);
       }
       $theaterOthers.css('background-color', 'rgb(217, 226, 225)');
@@ -171,8 +222,7 @@ $('.theater-list-big').click(function (e) {
       $('.theater-list-small').empty();
       for (let i = 0; i < theaterAll[1].nameSpecific.length; i++) {
         var $theaterListSmall = $('.theater-list-small');
-        var lists =
-          '<li id="selected">' + theaterAll[1].nameSpecific[i] + '</li>';
+        var lists = '<li>' + theaterAll[1].nameSpecific[i] + '</li>';
         $theaterListSmall.append(lists);
       }
       $theaterOthers.css('background-color', 'rgb(217, 226, 225)');
@@ -182,8 +232,7 @@ $('.theater-list-big').click(function (e) {
       $('.theater-list-small').empty();
       for (let i = 0; i < theaterAll[2].nameSpecific.length; i++) {
         var $theaterListSmall = $('.theater-list-small');
-        var lists =
-          '<li id="selected">' + theaterAll[2].nameSpecific[i] + '</li>';
+        var lists = '<li>' + theaterAll[2].nameSpecific[i] + '</li>';
         $theaterListSmall.append(lists);
       }
       $theaterOthers.css('background-color', 'rgb(217, 226, 225)');
@@ -223,7 +272,7 @@ function createTimeline(data) {
           movieName == data[i].movieNames &&
           theaterName == data[i].available[j].name
         ) {
-          console.log(movieName, data[i].movieNames);
+          // console.log(movieName, data[i].movieNames);
           var selectedMovieName = data[i].movieNames;
           // console.log(selectedMovieName);
           if (movieName == data[i].movieNames) {
@@ -289,34 +338,50 @@ function createTimeline(data) {
 }
 
 // 최종인포 선택
-$('#time-list')
-  .children()
-  .first()
-  .click(function (e) {
-    const duration = $('.time-duration').text();
-    const title = $('.time-title').text();
-    const seat = $('.time-info').text();
-    var $info = {
-      duration: duration,
-      title: title,
-      seat: seat,
-    };
-
-    var $selectedInfo = $(e.target);
-    var $infoOthers = $('#selectedInfo').not(e.target);
-    localStorage.setItem('selectedInfo', $selectedInfo);
-    // $('.theater-list-small').not('#selected').preventDefault();
-    $('.');
-    if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
-      $(e.target).css('background-color', 'rgb(66, 66, 66)');
-      $(e.target).css('color', 'rgb(255, 255, 255)');
-    } else if ($(e.target).css('color') == 'rgb(255, 255, 255)') {
-      $(e.target).css('background-color', 'rgb(217, 226, 225)');
-      $(e.target).css('color', 'rgb(0, 0, 0)');
+$(document).ready(function () {
+  $('#time-list').click(function (e) {
+    // var $selectedInfoLi = $('#selectedInfo');
+    // var $selectedInformation = $('#selectedInfo').not(e.target);
+    // $selectedInfoLi.addClass('selected');
+    e.target.addClass('selected');
+    // console.log($selectedInfoLi, $selectedInformation);
+    $selectedInfoLi.css('background-color', 'rgb(0,0,0)');
+    if (e.target.classList.contains('selected')) {
+      e.target.classList.toggle('selecting');
     }
-    $infoOthers.css('background-color', 'rgb(217, 226, 225)');
-    $infoOthers.css('color', 'rgb(0, 0, 0)');
   });
+});
 
 // 좌석선택 클릭 시 영화 정보 저장, 영화 미선택 시 alert
-$('.btn-confirm').click(function (e) {});
+// $('.btn-confirm').click(function (e) {});
+
+// $(document).ready(function () {
+//   $('#time-list')
+//     .children()
+//     .click(function (e) {
+//       console.log('time-list click On!!');
+//       const duration = $('.time-duration').text();
+//       const title = $('.time-title').text();
+//       const seat = $('.time-info').text();
+//       var $info = {
+//         duration: duration,
+//         title: title,
+//         seat: seat,
+//       };
+
+//       var $selectedInfo = $(e.target);
+//       var $infoOthers = $('#selectedInfo').not(e.target);
+//       localStorage.setItem('selectedInfo', $selectedInfo);
+//       // $('.theater-list-small').not('#selected').preventDefault();
+
+//       if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
+//         $(e.target).css('background-color', 'rgb(66, 66, 66)');
+//         $(e.target).css('color', 'rgb(255, 255, 255)');
+//       } else if ($(e.target).css('color') == 'rgb(255, 255, 255)') {
+//         $(e.target).css('background-color', 'rgb(217, 226, 225)');
+//         $(e.target).css('color', 'rgb(0, 0, 0)');
+//       }
+//       $infoOthers.css('background-color', 'rgb(217, 226, 225)');
+//       $infoOthers.css('color', 'rgb(0, 0, 0)');
+//     });
+// });
