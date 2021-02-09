@@ -14,6 +14,9 @@ body {
   overflow-y: scroll;
 }
 
+#section {
+  overflow: auto;
+}
 /* ASIDE */
 #sideMenu {
   position: relative;
