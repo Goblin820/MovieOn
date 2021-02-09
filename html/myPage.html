@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../style/header.css" />
     <link rel="stylesheet" href="../style/footer.css" />
     <link rel="stylesheet" href="../style/myPage.css" />
+    <link rel="stylesheet" href="../style/bubble.css" />
+    <script
+      type="text/javascript"
+      nonce="9711f72bfff749daaba8ab6bc43"
+      src="//local.adguard.org?ts=1612838643042&type=content-script&dmn=www.blueb.co.kr&app=chrome.exe&css=1&js=1&gcss=1&rel=1&rji=1&sbe=0"
+    ></script>
+
+    <script
+      type="text/javascript"
+      nonce="9711f72bfff749daaba8ab6bc43"
+      src="//local.adguard.org?ts=1612838643042&name=AdGuard%20Popup%20Blocker&name=AdGuard%20Extra&type=user-script"
+    ></script>
   </head>
   <body>
     <ul id="loginBar">
@@ -56,33 +68,34 @@
 
     <h1>마이페이지</h1>
     <div id="nameAndEmail">
-      <div><img src="https://www.megabox.co.kr/static/pc/images/mypage/bg-photo.png" alt="" /></div>
-      <div>홍길돌</div>
+      <div>안녕하세요 <span id="nickname">별명</span> 님</div>
+      <br />
+      <div>
+        <img
+          src="https://www.megabox.co.kr/static/pc/images/mypage/bg-photo.png"
+          alt=""
+        />
+      </div>
+      <div id="name">홍길동</div>
       <div>qewuri234@gmail.com</div>
     </div>
 
     <div id="unknown">
-      <div>
+      <div class="unknownDiv">
         <h3>총 보유 포인트</h3>
+
+        <div class="bubbles">
+          <h1 id="score">
+            160
+            <p>점</p>
+          </h1>
+        </div>
       </div>
-      <div>
-        <h3>
-          선호영화 즐겨찾기
-    
-        </h3>
-      </div>
-      <span>0 P</span>
-      <ul>
-        <li>귀멸의 칼날</li>
-        <li>겨울왕국</li>
-        <li>주토피아</li>
-        <li>라이온킹</li>
-      </ul>
     </div>
 
     <div id="reservation">
       <h3>예매내역</h3>
-      <div>극장판 귀멸의 칼날 12:40 무비온</div>
+      <div id="movieDb">극장판 귀멸의 칼날 12:40 무비온</div>
     </div>
 
     <footer id="footer">
@@ -100,5 +113,10 @@
         <p>COPYRIGHT © MovieOn, Inc. All rights reserved</p>
       </div>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../script/bubble.js">
+     
+    </script>
   </body>
 </html>
