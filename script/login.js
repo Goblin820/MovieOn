@@ -108,6 +108,7 @@ function LoginCheck() {
         $('#login').remove();
         $('#signup').remove();
         $('#loginBar')[0].innerHTML +=
+          '<li id="mypage" class="li-right"><a href="./myPage.html">마이페이지</a></li>' +
           '<li class="li-right"><a href="#none" onclick="OnLogout()">로그아웃</a></li>';
       }
     },
