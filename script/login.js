@@ -40,11 +40,11 @@ function OnLogin() {
   $.ajax({
     url: '../db/login.php',
     type: 'get',
+    dataType: 'json',
     data: {
       id: loginData.id,
       password: loginData.password,
     },
-    dataType: 'json',
     success: function (response) {
       if (response == null) return;
 
@@ -122,3 +122,19 @@ function LoginCheck() {
 }
 
 LoginCheck();
+
+// 마이 페이지 관련
+function MyPageDataSet() {
+  $.ajax({
+    url: '../db/myPage.php',
+    type: 'get',
+    dataType: 'json',
+    success: function (response) {},
+    error: function (request, status, error) {
+      alert('서버 연결에 실패하였습니다.(마이페이지 데이터)');
+      console.log(request + '\n');
+      console.log(status + '\n');
+      console.log(error + '\n');
+    },
+  });
+}
