@@ -129,12 +129,35 @@ function MyPageDataSet() {
     url: '../db/myPage.php',
     type: 'get',
     dataType: 'json',
-    success: function (response) {},
+    success: function (response) {
+      console.log(response.resultData);
+
+      let nickname = 'DEFULAT';
+      $('#name').text(response.resultData.id);
+
+      if (response.resultData.nickname.length != 0) {
+        nickname = response.resultData.nickname;
+      }
+      $('#nickname').text(nickname);
+      $('#email').text(response.resultData.email);
+      $('#score').text(response.resultData.point);
+    },
     error: function (request, status, error) {
       alert('서버 연결에 실패하였습니다.(마이페이지 데이터)');
+
       console.log(request + '\n');
       console.log(status + '\n');
       console.log(error + '\n');
+      console.log(
+        'code:' +
+          request.status +
+          '\n' +
+          'message:' +
+          request.responseText +
+          '\n' +
+          'error:' +
+          error
+      );
     },
   });
 }
