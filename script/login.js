@@ -20,10 +20,6 @@ function LoginRemove() {
   document.body.removeChild(loginRoot);
 }
 
-function MovingPageBySignup() {
-  window.location.href = '../html/signup.html';
-}
-
 const loginData = {
   id: '',
   password: '',
@@ -108,9 +104,11 @@ function LoginCheck() {
     dataType: 'text',
     success: function (response) {
       // 로그인 되어있는 아이디가 있는 경우
-      if (response.length != 0) {
-        // $('#login').remove();
-        // $('#singup').remove();
+      if (response.length != 0 && response.length < 50) {
+        $('#login').remove();
+        $('#signup').remove();
+        $('#loginBar')[0].innerHTML +=
+          '<li class="li-right"><a href="#none" onclick="OnLogout()">로그아웃</a></li>';
       }
     },
     error: function (request, status, error) {
