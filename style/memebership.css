@@ -9,15 +9,15 @@ li {
   margin: 0;
   padding: 0;
 }
-#section {
-  margin-top: 0px;
-  overflow: auto;
-}
 
 /* 컨텐츠 메뉴 버튼(멤버십, VIP LOUNGE) */
 .contents {
-  overflow: hidden;
   margin-top: 80px;
+}
+.contents::after {
+  display: block;
+  content: '';
+  clear: both;
 }
 .contents-btn {
   margin-top: 50px;

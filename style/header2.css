@@ -92,6 +92,8 @@
 }
 #listAndnavList {
   position: sticky;
+  width: 100%;
+  max-width: 1100px;
   top: 0;
   z-index: 1;
 }
