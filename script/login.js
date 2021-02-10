@@ -133,7 +133,7 @@ function MyPageDataSet() {
       console.log(response.resultData);
 
       let nickname = 'DEFULAT';
-      $('#name').text(response.resultData.id);
+      $('#name').text(response.resultData.name);
 
       if (response.resultData.nickname.length != 0) {
         nickname = response.resultData.nickname;
