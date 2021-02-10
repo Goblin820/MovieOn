@@ -234,21 +234,3 @@ img {
 .textInImg div {
   padding: 12%;
 }
-
-/*-------------------------------------*/
-#footer {
-  margin-top: 5%;
-  background-image: url('../resource/image/index/bg.jpg');
-  text-align: center;
-  border-radius: 8px;
-  height: 140px;
-  color: #f4f4f4;
-}
-.footer-info {
-  display: inline-block;
-  margin-left: 5%;
-}
-footer img {
-  margin-bottom: 102px;
-  border-radius: 8px;
-}
