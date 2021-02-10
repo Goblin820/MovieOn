@@ -83,12 +83,12 @@
           </div>
         </div>
       </div>
-      <script src="../script/index/mypage.js"></script>
+
       <div id="reservation">
         <h3>예매내역</h3>
         <div id="fin">
-          <span id="MN"></span>
-          <span>MovieOn </span><span id="PN"></span><span>점 </span>
+          <span id="abcd"></span> <span id="MN"></span> <span>MovieOn </span
+          ><span id="PN"></span><span>점 </span>
         </div>
       </div>
     </section>
@@ -117,8 +117,10 @@
     <script>
       const movieN = localStorage.getItem('selectedName');
       const placeN = localStorage.getItem('selectedLocation');
+      const time = localStorage.getItem('date');
       document.getElementById('MN').innerText = movieN;
       document.getElementById('PN').innerText = placeN;
+      document.getElementById('abcd').innerText = time;
     </script>
   </body>
 </html>
