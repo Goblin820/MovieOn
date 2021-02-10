@@ -23,8 +23,7 @@ body {
   float: left;
   margin-top: 50px;
   margin-right: 50px;
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
 }
 #lnb {
   margin: 0;
@@ -36,7 +35,6 @@ body {
   justify-content: center;
   height: 90px;
   border-radius: 10px 10px 0 0;
-  /* background-color: rgb(60, 60, 60); */
   background-color: black;
   color: white;
 }
@@ -45,7 +43,6 @@ body {
   font-weight: 300;
 }
 .sideMenu-list {
-  /* padding-bottom: 5px; */
   border-radius: 0px 0px 10px 10px;
   background-color: white;
   border: 2px solid black;
@@ -63,7 +60,7 @@ body {
 
 .sideMenu-list li:hover {
   font-size: 16px;
-  /* color: #01738b; */
+  color: #d09f67;
 }
 
 .sideMenu-list__on li {
@@ -74,8 +71,7 @@ body {
 /* CONTENTS */
 .contents {
   float: left;
-  width: calc(100% - 300px);
-  max-width: 840px;
+  width: 840px;
   transform: translate();
 }
 /* 블록 컨텐츠 (버튼 블록) */
