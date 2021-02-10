@@ -367,8 +367,6 @@ $(document).ready(function () {
       e.target.classList.contains('time-info')
     ) {
       e.target.parentElement.classList.toggle('selected');
-      let currentSelectedInfo = $('#selectedInfo.selected').innerHTML;
-      console.log(currentSelectedInfo);
     }
   });
 });

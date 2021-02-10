@@ -22,6 +22,6 @@ selection.addEventListener('click', (e) => {
     e.target.classList.contains('seat') &&
     !e.target.classList.contains('occupied')
   ) {
-    e.target.classList.toggle('selecting');
+    e.target.classList.toggle('seat select');
   }
 });

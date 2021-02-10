@@ -283,6 +283,12 @@ span {
   width: 100%;
   border: none;
 }
-footer {
+#footer {
   display: flex;
+}
+
+.footer-info {
+  margin: auto;
+  padding: auto;
+  text-align: center;
 }
