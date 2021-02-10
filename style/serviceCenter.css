@@ -86,9 +86,7 @@ body {
   position: relative;
   display: inline-block;
   margin-right: 50px;
-  width: auto;
-  min-width: 180px;
-  max-width: 300px;
+  width: 250px;
 }
 .block-btn:hover strong {
   color: #d09f67;
