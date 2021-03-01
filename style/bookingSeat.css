@@ -100,6 +100,7 @@ span {
   height: 20px;
   width: 20px;
   margin: 3px;
+  font-size: 0px;
 }
 .seat-num {
   position: absolute;
@@ -178,6 +179,7 @@ span {
 #review-desc {
   grid: 1;
   padding: 10px;
+  color: #d09f67;
 }
 #review-img {
   padding: 5px;
@@ -305,4 +307,9 @@ span {
 }
 #d {
   margin-left: 2.2%;
+}
+
+#selected-seat-table p {
+  margin: 0;
+  padding: 0;
 }

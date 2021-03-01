@@ -283,6 +283,8 @@ $('.theater-list-small').click(function (e) {
 // 타임라인 생성 (영화시간, 영화이름, {세부장소, 관, 좌석현황})
 let tempTime, tempTitle, tempInfo;
 function createTimeline(data) {
+  if (selectedObj.location == null) return;
+
   var $timeline = $('#time-list');
   const movieName = localStorage.getItem('selectedName');
   const theaterName = localStorage.getItem('selectedLocation');
@@ -296,7 +298,7 @@ function createTimeline(data) {
           movieName == data[i].movieNames &&
           theaterName == data[i].available[j].name
         ) {
-          console.log(movieName, data[i].movieNames);
+          // console.log(movieName, data[i].movieNames);
           var selectedMovieName = data[i].movieNames;
           // console.log(selectedMovieName);
           if (movieName == data[i].movieNames) {
@@ -405,6 +407,8 @@ $(document).ready(function () {
       e.target.parentElement.classList.toggle('selected');
       beforeSelected = e.target.parentElement;
       selectedObj.finalSelect = beforeSelected;
+      const selectedTime = e.target.previousElementSibling.textContent;
+      localStorage.setItem('selectedTime', selectedTime);
     }
   });
 });

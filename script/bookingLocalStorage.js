@@ -2456,5 +2456,5 @@ var today = new Date();
 // 로컬 스토리지에 저장
 window.localStorage.setItem('movie', JSON.stringify(movieAll));
 window.localStorage.setItem('theater', JSON.stringify(theaterAll));
-console.log(movieAll);
-console.log(theaterAll);
+// console.log(movieAll);
+// console.log(theaterAll);
