@@ -3,9 +3,9 @@
 header('Content-Type: text/html; charset=utf-8');
 
 $mysqlHost = 'localhost';
-$mysqlId = 'goblin820';
-$mysqlPassword = 'qnrudwns820!@';
-$mysqlDBName = 'goblin820_godohosting_com';
+$mysqlId = 'userId';
+$mysqlPassword = 'userPassword';
+$mysqlDBName = 'DBname';
 $connect = mysqli_connect($mysqlHost, $mysqlId, $mysqlPassword, $mysqlDBName);
 
 if(mysqli_connect_errno()){

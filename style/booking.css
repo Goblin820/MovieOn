@@ -2,11 +2,14 @@ html {
   box-sizing: border-box;
 }
 body {
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 0;
   height: 100vh;
-  width: 100%;
+  width: 100%; */
   background-color: #272727;
+}
+label {
+  color: #f4f4f4;
 }
 h1 {
   color: #d09f67;
@@ -381,7 +384,7 @@ h3 {
 
 #selected {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   width: 300px;
   background-image: linear-gradient(
     to right,
@@ -408,7 +411,7 @@ h3 {
 
 .selected {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   width: 100%;
   background-image: linear-gradient(
     to right,
@@ -430,7 +433,8 @@ h3 {
   color: #fff;
   text-decoration: none;
 }
-footer {
+
+/* footer {
   display: flex;
 }
 .footer-info {
@@ -438,4 +442,20 @@ footer {
 }
 .footer-info p:nth-child(1) {
   top: 0;
+} */
+#footer {
+  width: calc(100vw - 20px);
+}
+#a {
+  vertical-align: top;
+  margin-left: 13.4%;
+}
+#b {
+  margin-left: 2.6%;
+}
+#c {
+  margin-left: 21%;
+}
+#d {
+  margin-left: 2.2%;
 }

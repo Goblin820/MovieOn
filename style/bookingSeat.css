@@ -2,10 +2,10 @@ html {
   box-sizing: border-box;
 }
 body {
-  padding: 0;
+  /* padding: 0;
   margin: 0;
   height: 120vh;
-  width: 100%;
+  width: 100%; */
   /* background-image: url('../resource/image/booking/bgimg.jpg'); */
   background-color: #272727;
 }
@@ -283,7 +283,7 @@ span {
   width: 100%;
   border: none;
 }
-#footer {
+/* #footer {
   display: flex;
 }
 
@@ -291,4 +291,18 @@ span {
   margin: auto;
   padding: auto;
   text-align: center;
+} */
+
+#a {
+  vertical-align: top;
+  margin-left: 13.4%;
+}
+#b {
+  margin-left: 2.6%;
+}
+#c {
+  margin-left: 21%;
+}
+#d {
+  margin-left: 2.2%;
 }

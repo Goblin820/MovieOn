@@ -5,6 +5,13 @@ var MAX_DATE = '05월31일2021';
 // console.log(plusZero(datenow.getHours()-9));
 // console.log("Today's date: " + plusZero(datenow.getDate()));
 // console.log(movieAll[0].available[0].info[0].duration);
+const selectedObj = {
+  date: null,
+  movie: null,
+  location: null,
+  finalSelect: null,
+};
+let listComplete = false;
 
 function plusZero(hour) {
   if (hour < 10) {
@@ -34,13 +41,20 @@ $(document).ready(function () {
           movieNameArray.push(name);
         }
         localStorage.setItem('selectedName', movieNameArray);
-      } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
-        $(this).css('background-color', 'rgb(217, 226, 225)');
-        $(this).css('color', 'rgb(0, 0, 0)');
-        movieNameArray.pop(e.target);
-        // localStorage.removeItem('selectedName');
-        var names = localStorage.getItem('selectedName');
+        selectedObj.movie = movieNameArray;
       }
+
+      if (listComplete == true) {
+        document.getElementById('time-list').innerHTML = '';
+        createTimeline(movieAll);
+      }
+      // else if ($(this).css('color') == 'rgb(255, 255, 255)') {
+      //   $(this).css('background-color', 'rgb(217, 226, 225)');
+      //   $(this).css('color', 'rgb(0, 0, 0)');
+      //   movieNameArray.pop(e.target);
+      //   // localStorage.removeItem('selectedName');
+      //   var names = localStorage.getItem('selectedName');
+      // }
     });
 });
 
@@ -49,28 +63,30 @@ $(document).ready(function () {
   $('.theater-list-big')
     .children()
     .click(function () {
-      console.log($(this).css('color'));
+      // console.log($(this).css('color'));
       if ($(this).css('color') == 'rgb(0, 0, 0)') {
         $(this).css('background-color', 'rgb(66, 66, 66)');
         $(this).css('color', 'rgb(255, 255, 255)');
-      } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
-        $(this).css('background-color', 'rgb(217, 226, 225)');
-        $(this).css('color', 'rgb(0, 0, 0)');
       }
+      // else if ($(this).css('color') == 'rgb(255, 255, 255)') {
+      //   $(this).css('background-color', 'rgb(217, 226, 225)');
+      //   $(this).css('color', 'rgb(0, 0, 0)');
+      // }
     });
 });
 $(document).ready(function () {
   $('.theater-list-small')
     .children()
     .click(function () {
-      console.log($(this).css('color'));
+      // console.log($(this).css('color'));
       if ($(this).css('color') == 'rgb(0, 0, 0)') {
         $(this).css('background-color', 'rgb(66, 66, 66)');
         $(this).css('color', 'rgb(255, 255, 255)');
-      } else if ($(this).css('color') == 'rgb(255, 255, 255)') {
-        $(this).css('background-color', 'rgb(217, 226, 225)');
-        $(this).css('color', 'rgb(0, 0, 0)');
       }
+      // else if ($(this).css('color') == 'rgb(255, 255, 255)') {
+      //   $(this).css('background-color', 'rgb(217, 226, 225)');
+      //   $(this).css('color', 'rgb(0, 0, 0)');
+      // }
     });
 });
 
@@ -151,6 +167,8 @@ $(function () {
         const btnPrevCal = $('#btn-prev-date');
 
         localStorage.setItem('date', date);
+        $('#selected-calendar-label').text('/ 선택한 날짜 : ' + date);
+        selectedObj.date = date;
         alert(date + '를 선택하였습니다.'), $(this).hide();
       },
     })
@@ -181,6 +199,7 @@ $(document).ready(function () {
     // reset
     document.getElementById('time-list').innerHTML = '';
     createTimeline(movieAll);
+    listComplete = true;
   });
 });
 /****************************************************************/
@@ -243,9 +262,12 @@ $('.theater-list-big').click(function (e) {
 
 // 극장 소분류 선택
 $('.theater-list-small').click(function (e) {
+  if ($(e.target)[0] == $('.theater-list-small')[0]) return;
+
   var $selectedTheater = $(e.target).text();
   var $theaterOthers = $('.theater-list-small').children().not(e.target);
   localStorage.setItem('selectedLocation', $selectedTheater);
+  selectedObj.location = $selectedTheater;
   // $('.theater-list-small').not('#selected').preventDefault();
   if ($(e.target).css('color') == 'rgb(0, 0, 0)') {
     $(e.target).css('background-color', 'rgb(66, 66, 66)');
@@ -354,19 +376,35 @@ function createTimeline(data) {
       }
     }
   }
+  selectedObj.finalSelect = null;
 }
 
+let beforeSelected = null;
 // 최종인포 선택
 $(document).ready(function () {
   $('#time-list').click(function (e) {
-    if (e.target.classList.contains('selectedInfo')) {
-      e.target.classList.toggle('selected');
-    } else if (
+    // if (e.target.classList.contains('selectedInfo')) {
+    //   e.target.classList.toggle('selected');
+    // } else if (
+    //   e.target.classList.contains('time-duration') ||
+    //   e.target.classList.contains('time-title') ||
+    //   e.target.classList.contains('time-info')
+    // ) {
+    //   e.target.parentElement.classList.toggle('selected');
+    // }
+
+    if (
       e.target.classList.contains('time-duration') ||
       e.target.classList.contains('time-title') ||
       e.target.classList.contains('time-info')
     ) {
+      if (beforeSelected != null) {
+        beforeSelected.classList.toggle('selected');
+        beforeSelected = null;
+      }
       e.target.parentElement.classList.toggle('selected');
+      beforeSelected = e.target.parentElement;
+      selectedObj.finalSelect = beforeSelected;
     }
   });
 });
@@ -374,6 +412,23 @@ $(document).ready(function () {
 // 좌석선택 클릭 시 영화 정보 저장, 영화 미선택 시 alert
 $(document).ready(function () {
   $('.btn-confirm').click(function () {
-    alert(localIndex);
+    if (selectedObj.date == null) {
+      alert('날짜를 선택해주세요.');
+      return;
+    }
+    if (selectedObj.movie == null) {
+      alert('영화를 선택해주세요.');
+      return;
+    }
+    if (selectedObj.location == null) {
+      alert('지역을 선택해주세요.');
+      return;
+    }
+    if (selectedObj.finalSelect == null) {
+      alert('최종 영화를 선택해주세요.');
+      return;
+    }
+
+    location.href = '../html/bookingSeat.html';
   });
 });

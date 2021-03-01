@@ -3,10 +3,10 @@ html {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
+  width: 100%; */
   /* min-width: 1200px; */
   background-color: #272727;
 }
@@ -323,4 +323,18 @@ td {
 }
 .popup .close:hover {
   color: #06d85f;
+}
+
+#a {
+  vertical-align: top;
+  margin-left: 13.3%;
+}
+#b {
+  margin-left: 2.6%;
+}
+#c {
+  margin-left: 21.2%;
+}
+#d {
+  margin-left: 2.4%;
 }

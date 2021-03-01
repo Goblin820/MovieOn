@@ -27,11 +27,12 @@ selection.addEventListener('click', (e) => {
   }
 });
 
-$('#selection-seat').click(function(e) {
+$('#selection-seat').click(function (e) {
   const seatName = document.getElementsByClassName('seat');
   // console.log(seatName);
   var $selected = $(e.target);
-  const rows = 12, cols = 12;
+  const rows = 12,
+    cols = 12;
   var seatArray = new Array(rows);
   for (let i = 0; i < seatArray.length; i++) {
     seatArray[i] = new Array(cols);
@@ -39,69 +40,68 @@ $('#selection-seat').click(function(e) {
   console.log('etarget: ' + e.target);
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      switch(i) {
-      case 0:
-        selectedSeats.push('A' + j);
-        localStorage.setItem('selectedSeat', selectedSeats);
-        console.log(seatArray[i][j]);
-        break;
-      case 1:
-        seatArray[i][j] = 'B' + seatName[i];
-        localStorage.setItem('selectedSeat', 'B' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 2:
-        seatArray[i][j] = 'C' + seatName[i];
-        localStorage.setItem('selectedSeat', 'C' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 3:
-        seatArray[i][j] = 'D' + seatName[i];
-        localStorage.setItem('selectedSeat', 'D' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 4:
-        seatArray[i][j] = 'E' + seatName[i];
-        localStorage.setItem('selectedSeat', 'E' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 5:
-        seatArray[i][j] = 'F' + seatName[i];
-        localStorage.setItem('selectedSeat', 'F' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 6:
-        seatArray[i][j] = 'G' + seatName[i];
-        localStorage.setItem('selectedSeat', 'G' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 7:
-        seatArray[i][j] = 'H' + seatName[i];
-        localStorage.setItem('selectedSeat', 'H' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 8:
-        seatArray[i][j] = 'I' + seatName[i];
-        localStorage.setItem('selectedSeat', 'I' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 9:
-        seatArray[i][j] = 'J' + seatName[i];
-        localStorage.setItem('selectedSeat', 'J' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 10:
-        seatArray[i][j] = 'K' + seatName[i];
-        localStorage.setItem('selectedSeat', 'K' + j);
-        console.log(seatArray[i][j]);
-        break;
-      case 11:
-        seatArray[i][j] = 'L' + seatName[i];
-        localStorage.setItem('selectedSeat', 'L' + j);
-        console.log(seatArray[i][j]);
-        break;
+      //   switch(i) {
+      //   case 0:
+      //     selectedSeats.push('A' + j);
+      //     localStorage.setItem('selectedSeat', selectedSeats);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 1:
+      //     seatArray[i][j] = 'B' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'B' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 2:
+      //     seatArray[i][j] = 'C' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'C' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 3:
+      //     seatArray[i][j] = 'D' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'D' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 4:
+      //     seatArray[i][j] = 'E' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'E' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 5:
+      //     seatArray[i][j] = 'F' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'F' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 6:
+      //     seatArray[i][j] = 'G' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'G' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 7:
+      //     seatArray[i][j] = 'H' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'H' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 8:
+      //     seatArray[i][j] = 'I' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'I' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 9:
+      //     seatArray[i][j] = 'J' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'J' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 10:
+      //     seatArray[i][j] = 'K' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'K' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      //   case 11:
+      //     seatArray[i][j] = 'L' + seatName[i];
+      //     localStorage.setItem('selectedSeat', 'L' + j);
+      //     console.log(seatArray[i][j]);
+      //     break;
+      // }
     }
   }
-}
 });
-
