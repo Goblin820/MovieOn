@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마이페이지</title>
-    <link rel="stylesheet" href="../style/mypageheader.css" />
-    <link rel="stylesheet" href="../style//footer.css" />
-    <link rel="stylesheet" href="../style/myPage.css" />
-    <link rel="stylesheet" href="../style/bubble.css" />
-    <link rel="stylesheet" href="../style/common.css" />
+    <link rel="stylesheet" href="../style/common.css?after" />
+    <link rel="stylesheet" href="../style/footer.css?after" />
+    <link rel="stylesheet" href="../style/header.css?after" />
+    <link rel="stylesheet" href="../style/myPage.css?after" />
   </head>
   <body>
     <section id="section">
@@ -59,36 +58,34 @@
 
       <h1>마이페이지</h1>
       <div id="nameAndEmail">
-        <div>안녕하세요 <span id="nickname">별명</span> 님</div>
+        <div>안녕하세요 <span id="nickname">유저 별명</span> 님</div>
         <br />
         <div>
-          <img
-            src="https://www.megabox.co.kr/static/pc/images/mypage/bg-photo.png"
-            alt=""
-          />
+          <img src="../resource/image/icon/userProfile.png" alt="" />
         </div>
-        <div id="name">홍길동</div>
-        <div id="email">qewuri234@gmail.com</div>
+        <div id="name">유저 이름</div>
+        <div id="email">email@mail.com</div>
       </div>
 
-      <div id="unknown">
-        <div class="unknownDiv">
-          <h3>총 보유 포인트</h3>
-
-          <div class="bubbles">
-            <h1 id="score">
-              160
-              <p>점</p>
-            </h1>
+      <div id="score">
+        <div class="score-point">
+          <h1>총 보유 포인트</h1>
+          <div class="score-point-result">
+            <span id="user-score">?</span>
+            <span>점</span>
           </div>
         </div>
       </div>
 
       <div id="reservation">
-        <h3>예매내역</h3>
+        <h1>예매내역</h1>
         <div id="fin">
-          <span id="abcd"></span> <span id="MN"></span> <span>MovieOn </span
-          ><span id="PN"></span><span>점 </span>
+          <span>위치 및 장소 : </span>
+          <span id="calendar"></span>
+          <span id="time"></span>
+          <span id="locationName"></span><span>점</span><br />
+          <span>영화:</span>
+          <span id="movieName"> </span>
         </div>
       </div>
     </section>
@@ -109,18 +106,20 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../script/bubble.js"></script>
+    <!-- <script src="../script/bubble.js"></script> -->
     <script src="../script/login.js"></script>
     <script>
       MyPageDataSet();
     </script>
     <script>
-      const movieN = localStorage.getItem('selectedName');
-      const placeN = localStorage.getItem('selectedLocation');
-      const time = localStorage.getItem('date');
-      document.getElementById('MN').innerText = movieN;
-      document.getElementById('PN').innerText = placeN;
-      document.getElementById('abcd').innerText = time;
+      const movieName = localStorage.getItem('selectedName');
+      const locationName = localStorage.getItem('selectedLocation');
+      const date = localStorage.getItem('date');
+      const time = localStorage.getItem('selectedTime');
+      document.getElementById('calendar').innerText = date;
+      document.getElementById('time').innerText = time;
+      document.getElementById('locationName').innerText = locationName;
+      document.getElementById('movieName').innerText = movieName;
     </script>
   </body>
 </html>

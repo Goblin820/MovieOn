@@ -2,8 +2,9 @@
 body {
   margin: 0px auto;
 
-  max-width: 1100px;
-  background-image: url('../resource/image/index/bg.jpg');
+  /* max-width: 1100px; */
+  background-color: #272727;
+  font-family: 'Noto Sans KR';
 }
 body a:link,
 body a:visited {
