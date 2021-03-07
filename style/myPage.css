@@ -1,52 +1,45 @@
 body {
-  background-image: url('../resource/image/index/bg.jpg');
- 
+  font-family: 'Noto Sans KR';
 }
 h1 {
-  margin: 0;
   height: 60px;
   display: flex;
   align-items: center;
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
-  color: #f4f4f4;
+  color: black;
   margin-top: 100px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  /* border-top-left-radius: 8px; */
+  /* border-top-right-radius: 8px; */
+  border-top: 1px solid black;
+  border-bottom: 1px solid gray;
 }
 #nameAndEmail {
   height: 230px;
   text-align: center;
-  color: #f4f4f4;
+  color: black;
   font-size: 20px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-style: solid;
+  border-radius: 5px;
 }
 
-#unknown {
+#score {
   height: 100px;
-  color: #f4f4f4;
+  /* color: #f4f4f4; */
   margin-top: 50px;
 }
-.unknownDiv {
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
+.score-point {
+  color: black;
 }
-.unknownDiv h3 {
-  font-size: 25px;
-  margin: 0;
-}
-
-#reservation h3 {
-  background-image: url('http://www.mandjvideo.com/wp-content/uploads/2013/12/bg-footer-blk-texture.jpg');
-
-  display: flex;
-  align-items: center;
+.score-point span {
   font-size: 25px;
 }
+
+#user-score {
+  margin-left: 10px;
+  color: #d09f67;
+}
+
 #reservation {
   height: 200px;
-  color: #f4f4f4;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
   margin-top: 80px;
   margin-bottom: 80px;
 }
@@ -63,16 +56,19 @@ h1 {
   float: right;
 }
 
-#movieArray {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
-}
 #point {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqkxwODWBBjhTfDKCwvoaAXKiAGLi2cG0hw&usqp=CAU');
   height: 300px;
 }
 #movieDb {
   font-size: 25px;
 }
-#fin span{
- font-size: 22px;
+#fin span {
+  font-size: 22px;
+}
+
+#nickname,
+#name,
+#email,
+#score {
+  color: #d09f67;
 }
