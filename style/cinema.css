@@ -14,6 +14,11 @@ body a:visited {
 .wrapper a:hover {
   text-decoration: underline;
 }
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 
 *,
 *:before,

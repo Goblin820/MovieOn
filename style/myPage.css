@@ -1,6 +1,13 @@
 body {
   font-family: 'Noto Sans KR';
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   height: 60px;
   display: flex;
@@ -13,12 +20,18 @@ h1 {
   border-bottom: 1px solid gray;
 }
 #nameAndEmail {
-  height: 230px;
+  margin: 0;
   text-align: center;
   color: black;
   font-size: 20px;
   border-style: solid;
   border-radius: 5px;
+}
+#nameAndEmail > span {
+  font-size: 22px;
+}
+.userInfo-box {
+  margin: 20px 0;
 }
 
 #score {
@@ -54,6 +67,12 @@ h1 {
 }
 #unknown ul {
   float: right;
+}
+
+#birth-text {
+  margin-left: 10px;
+  font-size: 22px;
+  color: #d09f67;
 }
 
 #point {

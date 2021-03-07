@@ -84,6 +84,12 @@ function OnLogout() {
     success: function (response) {
       if (response.result == 401) {
         alert('로그아웃!');
+
+        localStorage.setItem('selectedName', '');
+        localStorage.setItem('selectedLocation', '');
+        localStorage.setItem('date', '');
+        localStorage.setItem('selectedTime', '');
+
         location.reload(true);
       }
     },
@@ -140,7 +146,8 @@ function MyPageDataSet() {
       }
       $('#nickname').text(nickname);
       $('#email').text(response.resultData.email);
-      $('#score').text(response.resultData.point);
+      $('#user-score').text(response.resultData.point);
+      $('#birth-text').text(response.resultData.birth);
     },
     error: function (request, status, error) {
       alert('서버 연결에 실패하였습니다.(마이페이지 데이터)');
